@@ -3,11 +3,9 @@
 OptiTool es un proyecto especializado para optimizar el sistema (solo Windows) tambien contiene
 funciones extra como mostrar la informacion del sistema
 
+## Descargar OptiTool 🚀
 
-## Descargar OptiTool
-
-<a href="https://github.com/OptiStudioXD/OptiTool/releases/download/2.9/Optitool.v2.99.3.-.OptiStudio.zip" style="display: inline-block; padding: 10px 20px; font-size: 16px; color: white; background-color: #28a745; border-radius: 5px; text-decoration: none;">Descargar OptiTool</a>
-
+[**Descargar OptiTool**](https://github.com/OptiStudioXD/OptiTool/releases/download/2.9/Optitool.v2.99.3.-.OptiStudio.zip)
 
 ## Instalación
 
