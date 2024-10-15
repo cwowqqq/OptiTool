@@ -15,7 +15,7 @@ OptiTool es una herramienta diseñada para optimizar y mejorar la eficiencia de 
 
 ## Instalación
 
-1. Descarga la última versión de OptiTool desde la sección de [Releases](https://github.com/OptiStudioXD/OptiTool/releases).
+1. Descarga la última versión de OptiTool desde [README](https://github.com/OptiStudioXD/OptiTool/README.md).
 2. Descomprime el archivo ZIP en la ubicación de tu elección.
 3. Ejecuta `OptiTool.bat` para iniciar la aplicación.
 
