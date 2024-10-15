@@ -1,5 +1,5 @@
 @echo off
-title OptiTool v2.99.2
+title OptiTool v2.99.3
 color 0A
 
 :: BatGotAdmin
