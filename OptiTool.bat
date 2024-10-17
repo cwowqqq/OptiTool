@@ -1,5 +1,5 @@
 @echo off
-title OptiTool v2.99.3
+title OptiTool v3.0
 color 0A
 
 :: BatGotAdmin
@@ -30,11 +30,10 @@ if '%errorlevel%' NEQ '0' (
     pushd "%CD%"
     CD /D "%~dp0"
 
-
 :start
 cls
 echo ==================================================
-echo                 OptiTool v2.99 
+echo               OptiTool Stable
 echo ==================================================
 echo.
 
@@ -43,8 +42,8 @@ echo *1 - Optimizar PC
 echo *2 - Optimizar RAM
 echo *3 - Crear punto de restauracion (Recomendado)
 echo *4 - Opciones de Defender
-echo *5 - Litear Windows
-echo *6 - Opciones extra
+echo *5 - Opciones extremas
+echo *6 - Opciones adicionales
 echo.
 
 set /p op=Opcion: 
@@ -53,7 +52,7 @@ if "%op%"=="1" goto :optimization
 if "%op%"=="2" goto :optiram
 if "%op%"=="3" goto :respoint
 if "%op%"=="4" goto :defoptions
-if "%op%"=="5" goto :lite
+if "%op%"=="5" goto :extreme
 if "%op%"=="6" goto :extra
 (
     echo Opcion no valida. Por favor, elige una opcion del menu.
@@ -72,9 +71,9 @@ echo Aplicando Optimizaciones Bcdedit...
 bcdedit /set useplatformtick yes >nul 2>&1
 bcdedit /set disabledynamictick yes >nul 2>&1
 echo.
-echo Activando OptiGamingMode...
+echo Activando OptiVortex...
 powercfg -h off >nul 2>&1
-powercfg -import "%~dp0Recursos\Plan de Energia CPU\OptiGamingMode.pow" a11a11c9-6d83-493e-a38d-d5fa3c620915 >nul 2>&1
+powercfg -import "%~dp0Recursos\Plan de Energia CPU\OptiVortex.pow" a11a11c9-6d83-493e-a38d-d5fa3c620915 >nul 2>&1
 powercfg /setactive a11a11c9-6d83-493e-a38d-d5fa3c620915 >nul 2>&1
 echo.
 echo Borrando Archivos Temporales...
@@ -88,6 +87,10 @@ regedit /S "Recursos\Prioridad CPU\Prioridad Juegos.reg"
 regedit /S "Recursos\Mitigar CPU\Deshabilitar Mitigaciones.reg"
 regedit /S "Recursos\Telemetria\Deshabilitar Telemetria.reg"
 regedit /S "Graficos\Optimizar INTEL.reg"
+regedit /S "Apariencia\Deshabilitar Animaciones.reg"
+regedit /S "Apariencia\Deshabilitar Cortana.reg"
+regedit /S "Apariencia\Deshabilitar Transparencias.reg"
+regedit /S "Apariencia\Deshabilitar Centro Acciones.reg"
 regedit /S "Graficos\Optimizar NVIDIA.reg"
 regedit /S "Graficos\Prioridad A Graficos.reg"
 regedit /S "RAM\Optimizar RAM.reg"
@@ -101,9 +104,9 @@ echo Aplicando Optimizaciones Bcdedit...
 bcdedit /set useplatformtick yes >nul 2>&1
 bcdedit /set disabledynamictick yes >nul 2>&1
 echo.
-echo Activando OptiGamingMode...
+echo Activando OptiVortex...
 powercfg -h off >nul 2>&1
-powercfg -import "%~dp0Recursos\Plan de Energia CPU\OptiGamingMode.pow" a11a11c9-6d83-493e-a38d-d5fa3c620915 >nul 2>&1
+powercfg -import "%~dp0Recursos\Plan de Energia CPU\OptiVortex.pow" a11a11c9-6d83-493e-a38d-d5fa3c620915 >nul 2>&1
 powercfg /setactive a11a11c9-6d83-493e-a38d-d5fa3c620915 >nul 2>&1
 echo.
 echo Borrando Archivos Temporales...
@@ -117,6 +120,10 @@ regedit /S "Recursos\Prioridad CPU\Prioridad Juegos.reg"
 regedit /S "Recursos\Mitigar CPU\Deshabilitar Mitigaciones.reg"
 regedit /S "Recursos\Telemetria\Deshabilitar Telemetria.reg"
 regedit /S "Graficos\Optimizar INTEL.reg"
+regedit /S "Apariencia\Deshabilitar Animaciones.reg"
+regedit /S "Apariencia\Deshabilitar Cortana.reg"
+regedit /S "Apariencia\Deshabilitar Transparencias.reg"
+regedit /S "Apariencia\Deshabilitar Centro Acciones.reg"
 regedit /S "Graficos\Optimizar NVIDIA.reg"
 regedit /S "Graficos\Prioridad A Graficos.reg"
 regedit /S "RAM\Optimizar RAM.reg"
@@ -127,6 +134,23 @@ start /min "" "%SystemDrive%\Program Files (x86)\Mem Reduct\memreduct.exe"
 timeout /t 3 /nobreak
 goto :doneram
 
+:extreme
+cls
+echo =========================
+echo    Opciones extremas
+echo =========================
+echo.
+echo 1* Litear Windows
+echo 2* Regresar al menu
+echo.
+echo Ya se agregaran mas!
+echo.
+
+set /p op=Opcion: 
+if "%op%"=="1" goto :confirm_lite
+if "%op%"=="2" goto :start
+
+
 :respoint
 cls
 echo ----------------------------------------------------
@@ -135,11 +159,11 @@ echo ----------------------------------------------------
 echo.
 echo Creando punto de restauracion...
 echo.
-echo.
+timeout /t 1 /nobreak>nul
 "powershell.exe" -Command "Checkpoint-Computer -Description 'Antes Optimizacion'"
 cls
 echo Punto de restauracion creado.
-timeout /t 2 /nobreak
+pause
 goto :start
 
 
@@ -151,15 +175,14 @@ echo --------------------------------------------------
 echo.
 echo *1 - Deshabilitar Windows Defender
 echo *2 - Habilitar Windows Defender
-echo *3 - Comprobar el estado de Windows Defender
-echo *4 - Regresar al menu.
+echo *3 - Regresar al menu.
 echo.
 set /p defop=Opción: 
 if "%defop%"=="1" goto :defoff
 if "%defop%"=="2" goto :defon
-if "%defop%"=="3" goto :defcheck
-if "%defop%"=="4" goto :start
+if "%defop%"=="3" goto :start
 goto :start
+
 
 :defcheck
 cls
@@ -168,9 +191,6 @@ echo         Verificacion de Windows Defender
 echo --------------------------------------------------
 echo.
 echo Comprobando el estado de Windows Defender...
-echo.
-echo.
-rem Comprobando el estado de Windows Defender...
 echo.
 echo.
 powershell -Command "if ((Get-MpComputerStatus).RealTimeProtectionEnabled) { exit 0 } else { exit 1 }"
@@ -195,6 +215,8 @@ if %errorlevel%==0 (
     echo NOTA: Este script no funciona bien, puede dar falsos
     echo datos, proximamente encontrare el error :)
 )
+
+:: Este fragmento esta deshabilitado, no funciona
 
 pause
 timeout /t 3 /nobreak >nul
@@ -254,6 +276,21 @@ echo Windows Defender fue activado correctamente
 timeout /t 3 /nobreak
 goto :start
 
+:confirm_lite
+cls
+set /p option="Sure (Y/N)? "
+
+if /I "%option%"=="Y" goto lite
+if /I "%option%"=="yes" goto lite
+if /I "%option%"=="YES" goto lite
+if /I "%option%"=="N" goto extreme
+if /I "%option%"=="no" goto extreme
+if /I "%option%"=="NO" goto extreme
+
+echo Invalid option. Exiting.
+goto extreme
+
+
 :lite
 cls
 echo --------------------------------------------------
@@ -277,6 +314,10 @@ echo.
 timeout /t 5
 pause
 cls
+regedit /S "Apariencia\Deshabilitar Animaciones.reg"
+regedit /S "Apariencia\Deshabilitar Cortana.reg"
+regedit /S "Apariencia\Deshabilitar Transparencias.reg"
+regedit /S "Apariencia\Deshabilitar Centro Acciones.reg"
 echo.
 echo Consiguiendo acceso a WinSxS...
 echo.
@@ -320,8 +361,6 @@ goto :donelite
 cls
 echo Iniciando herramienta de creditos...
 echo.
-
-
 start "" "%~dp0Assets\batchutilities\creds.bat"
 
 timeout /t 2 /nobreak >nul
@@ -331,34 +370,11 @@ goto exit1
 cls
 echo Iniciando SystemInfo...
 echo.
-
-
-
 start "" "%~dp0Assets\batchutilities\sysinfo.bat"
 
 timeout /t 2 /nobreak >nul
 goto exit1
 
-:extinf
-echo ===================================
-echo          Informacion extra
-echo ===================================
-echo.
-echo.
-echo Esto es un secreto entre tu y yo... Eres ingles o español?
-echo no importa, porque proximamente se vendran diferentes idiomas, como
-echo Español, Ingles, Portugues etc. Posiblemente esto llegue para
-echo la version 4.2 o 4.0, asi mas personas podrian entenderle.
-echo. 
-echo Si ven una gran tardanza entre la version 3.0 - 4.0 es por eso mismo
-echo es porque estoy programe y programe los idiomas porque alch, usare IA para
-echo eso de los idiomas, pero yo quiero hacer una gran mejora entre 3.0 - 4.0
-echo Una mejora estetica, funcional, util y para que por fin, bye bye errores
-echo entonces no te preocupes si tarda 3 meses cambiar de la 3.0 a 4.0
-echo.
-echo Este es un secreto, no le digas a nadie...
-timeout /t 10 /nobreak > nul
-goto :start
 
 :extra
 cls
@@ -428,7 +444,7 @@ echo.
 echo By OptiStudio
 echo.
 echo --------------------------------------------------
-timeout /t 10 /nobreak
+start "" "%~dp0Assets\messages\message_lite.vbs"
 goto :start
 
 :exit1
@@ -443,6 +459,6 @@ echo Confirme la salida...
 pause
 exit
 
-
+:: Build 1.0010.1
 :: Este programa es de uso abierto y puede ser modificado por todos. Solo no olvides darle
 :: Creditos a su creador OptiStudio.
