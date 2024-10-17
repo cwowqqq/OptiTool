@@ -77,9 +77,10 @@ powercfg -import "%~dp0Recursos\Plan de Energia CPU\OptiVortex.pow" a11a11c9-6d8
 powercfg /setactive a11a11c9-6d83-493e-a38d-d5fa3c620915 >nul 2>&1
 echo.
 echo Borrando Archivos Temporales...
-del /S /F /Q "%temp%"
-del /S /F /Q "%WINDIR%\Temp\*.*" >nul 2>&1
-del /S /F /Q "%WINDIR%\Prefetch\*.*" >nul 2>&11
+
+start "" "%~dp0Recursos\FastTempDel.bat"
+
+timeout /t 2 /nobreak >nul
 echo.
 echo Aplicando Optimizaciones de Regedit
 regedit /S "Recursos\Servicios\Optimizar Servicios.reg"
@@ -89,8 +90,6 @@ regedit /S "Recursos\Telemetria\Deshabilitar Telemetria.reg"
 regedit /S "Graficos\Optimizar INTEL.reg"
 regedit /S "Apariencia\Deshabilitar Animaciones.reg"
 regedit /S "Apariencia\Deshabilitar Cortana.reg"
-regedit /S "Apariencia\Deshabilitar Transparencias.reg"
-regedit /S "Apariencia\Deshabilitar Centro Acciones.reg"
 regedit /S "Graficos\Optimizar NVIDIA.reg"
 regedit /S "Graficos\Prioridad A Graficos.reg"
 regedit /S "RAM\Optimizar RAM.reg"
@@ -122,8 +121,6 @@ regedit /S "Recursos\Telemetria\Deshabilitar Telemetria.reg"
 regedit /S "Graficos\Optimizar INTEL.reg"
 regedit /S "Apariencia\Deshabilitar Animaciones.reg"
 regedit /S "Apariencia\Deshabilitar Cortana.reg"
-regedit /S "Apariencia\Deshabilitar Transparencias.reg"
-regedit /S "Apariencia\Deshabilitar Centro Acciones.reg"
 regedit /S "Graficos\Optimizar NVIDIA.reg"
 regedit /S "Graficos\Prioridad A Graficos.reg"
 regedit /S "RAM\Optimizar RAM.reg"
@@ -133,6 +130,28 @@ xcopy "Recursos\Reducir RAM" "%SystemDrive%\Program Files (x86)" /S /Y
 start /min "" "%SystemDrive%\Program Files (x86)\Mem Reduct\memreduct.exe"
 timeout /t 3 /nobreak
 goto :doneram
+
+:roblaunchdownload
+cls
+set /p option="Sure (Y/N)? "
+
+if /I "%option%"=="Y" goto roblaunchdownload_2
+if /I "%option%"=="yes" goto roblaunchdownload_2
+if /I "%option%"=="YES" goto roblaunchdownload_2 
+if /I "%option%"=="N" goto start
+if /I "%option%"=="no" goto start
+if /I "%option%"=="NO" goto start
+
+echo Invalid option. Exiting.
+goto extrem
+
+:roblaunchdownload_2
+cls
+
+start "" "%~dp0Assets\roblaunch\roblauncher-downloader.bat"
+
+pause
+goto start
 
 :extreme
 cls
@@ -459,6 +478,6 @@ echo Confirme la salida...
 pause
 exit
 
-:: Build 1.0010.1
+
 :: Este programa es de uso abierto y puede ser modificado por todos. Solo no olvides darle
 :: Creditos a su creador OptiStudio.
