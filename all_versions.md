@@ -2,7 +2,7 @@
 
 ## Versiones
 
-### OptiTool (Beta 0.5)
+### Optisystem Tool (Beta 0.5)
 - **Descripción**: Era la primera version, OptiTool era un bebe :'v
 
 ### OptiTool v1.0
