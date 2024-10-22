@@ -30,8 +30,7 @@ dice su respectiva funcion, no es tan dificil usarlo
 
 Como contribuir?
 
-Facil, descargalo, con eso me ayudas MUCHO!
-Tambien pasate por el Youtube, esta muerto pero ya lo estoy reviviendo!
+Pasate por el [Youtube] esta muerto pero ya lo estoy reviviendo!
 
 ## Licencia
 
