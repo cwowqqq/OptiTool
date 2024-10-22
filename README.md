@@ -3,7 +3,7 @@
 Project OptiTool es un proyecto especializado para optimizar el sistema (solo Windows) tambien contiene
 funciones extra como mostrar la informacion del sistema.
 
-## Descargar OptiTool 🚀
+## Descargar Project OptiTool 🚀
 
 [**Descargar Project OptiTool**](https://github.com/OptiStudioXD/OptiTool/releases/download/2.9/Optitool.v2.99.3.-.OptiStudio.zip)
 
