@@ -5,7 +5,7 @@ funciones extra como mostrar la informacion del sistema.
 
 ## Descargar OptiTool 🚀
 
-[**Descargar OptiTool**](https://github.com/OptiStudioXD/OptiTool/releases/download/2.9/Optitool.v2.99.3.-.OptiStudio.zip)
+[**Descargar Project OptiTool**](https://github.com/OptiStudioXD/OptiTool/releases/download/2.9/Optitool.v2.99.3.-.OptiStudio.zip)
 
 [**Descargar Beta mas reciente**](https://github.com/OptiStudioXD/OptiTool/releases/download/3.0-lastbeta/OptiTool.v3.0Beta3.zip)
 
