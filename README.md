@@ -34,4 +34,4 @@ Pasate por el [Youtube] esta muerto pero ya lo estoy reviviendo!
 
 ## Licencia
 
-Este proyecto está bajo la [MIT License](LICENSE). Puedes ver el archivo de licencia para más detalles.
+Este proyecto está bajo la [**MIT License**](LICENSE). Puedes ver el archivo de licencia para más detalles.
