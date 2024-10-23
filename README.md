@@ -30,7 +30,7 @@ dice su respectiva funcion, no es tan dificil usarlo
 
 Como contribuir?
 
-Pasate por el [Youtube] esta muerto pero ya lo estoy reviviendo!
+Pasate por el [Youtube](https://youtube.com/) esta muerto pero ya lo estoy reviviendo!
 
 ## Licencia
 
