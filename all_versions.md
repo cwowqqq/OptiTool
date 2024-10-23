@@ -28,7 +28,9 @@
 
 - ### OptiTool v3.0
 - **Descripción**: La mejora mas grande hasta ahora
-  
+
+ - ### OptiTool v3.1
+ - **Descripción**: Un par de bugfixs y implementaciones extra
 ---
 
 ## Notas
