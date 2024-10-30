@@ -24,17 +24,17 @@
 ### OptiTool v2.99.3
 - **Descripción**: Última actualización antes de la transición a la versión 3.0.
 
-- ### OptiTool v3.0
+### OptiTool v3.0
 - **Descripción**: La mejora mas grande hasta ahora
 
- - ### OptiTool v3.1
- - **Descripción**: Un par de bugfixs y implementaciones extra
+### OptiTool v3.1
+- **Descripción**: Un par de bugfixs y implementaciones extra
 
- - ### OptiTool v3.2
- - **Descripción**: 1 palabra: solucion
+### OptiTool v3.2
+- **Descripción**: 1 palabra: solucion
 
- - ### OptiTool v3.5
- - **Descripcion**: La mejor version de las 3.0, corrigio muchos errores y agrego mas optimizaciones
+### OptiTool v3.5
+- **Descripcion**: La mejor version de las 3.0, corrigio muchos errores y agrego mas optimizaciones
 ---
 
 ## Notas
