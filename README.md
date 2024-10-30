@@ -1,6 +1,6 @@
 # **Project OptiTool**
 
-Project OptiTool es un proyecto especializado para optimizar el sistema (solo Windows) tambien contiene
+Project OptiTool es un proyecto especializado para optimizar el sistema, tambien contiene
 funciones extra como mostrar la informacion del sistema y desinstalar aplicaciones.
 
 ## Descargar Project OptiTool 🚀
