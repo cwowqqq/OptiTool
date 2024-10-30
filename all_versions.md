@@ -1,6 +1,4 @@
-# OptiSystem Tool
-
-## Versiones
+## Versiones de OptiTool
 
 ### Optisystem Tool (Beta 0.5)
 - **Descripción**: Era la primera version, OptiTool era un bebe :'v
@@ -31,6 +29,12 @@
 
  - ### OptiTool v3.1
  - **Descripción**: Un par de bugfixs y implementaciones extra
+
+ - ### OptiTool v3.2
+ - **Descripción**: 1 palabra: solucion
+
+ - ### OptiTool v3.5
+ - **Descripcion**: La mejor version de las 3.0, corrigio muchos errores y agrego mas optimizaciones
 ---
 
 ## Notas
