@@ -19,9 +19,9 @@ funciones extra como mostrar la informacion del sistema y desinstalar aplicacion
 
 3. Ingresa a la carpeta "OptiTool"
 
-4. Ejecuta el script
+5. Ejecuta `OptiTool.bat`
 
-5. Usalo!
+6. Usalo!
 
 ## Uso
 
