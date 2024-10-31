@@ -23,6 +23,22 @@ funciones extra como mostrar la informacion del sistema y desinstalar aplicacion
 
 6. Usalo!
 
+### Instalacion mediante Setup
+
+1. Ejecuta el setup
+
+2. Selecciona la carpeta de tu gusto
+
+3. Si gustas, crea un acceso directo en el escritorio
+
+4. Instalalo
+
+5. Dirigete a donde lo descargaste
+
+6. Ejecuta `OptiTool.bat`
+
+7. Usalo!
+
 ## Uso
 
 Tiene una interfaz basica ya que esta hecho en "batchfile" cada boton
