@@ -53,4 +53,4 @@ Pasate por el [**Youtube**](https://youtube.com/53wCWVynDUiHPFAZz1aeF9ErngZfV7aD
 
 ## Licencia
 
-Este proyecto está bajo la [**MIT License**](LICENSE). Puedes ver el archivo de licencia para más detalles.
+Este proyecto está bajo la [**MIT License**](https://goo.su/Zn6m). Puedes ver el [**archivo de licencia**](LICENSE) para más detalles.
