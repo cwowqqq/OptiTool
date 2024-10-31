@@ -7,9 +7,9 @@ funciones extra como mostrar la informacion del sistema y desinstalar aplicacion
 
 [**Descargar Project OptiTool (zip)**](https://github.com/OptiStudioXD/OptiTool/releases/)
 
-[**Descargar Setup Project OptiTool**](https://linkmodificablexd.com)
+[**Descargar Setup Project OptiTool**](https://github.com/OptiStudioXD/OptiTool/releases/download/3.5/OptiTool_setup_es.exe)
 
-[**Descargar Ediciones para Linux**](https://linkmodificablexd.com)
+[**Descargar Ediciones para Linux**](https://github.com/nevergonandnwajkdawdnkasdjkwadjsajkwkndkns/)
 
 ## Instalación mediante .zip
 
