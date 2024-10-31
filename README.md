@@ -42,7 +42,8 @@ funciones extra como mostrar la informacion del sistema y desinstalar aplicacion
 ## Uso
 
 Tiene una interfaz basica ya que esta hecho en "batchfile" cada boton
-dice su respectiva funcion, no es tan dificil usarlo
+dice su respectiva funcion, no es tan dificil usarlo, tiene guias
+en el script, con eso es suficiente, creo...
 
 ## Contribuciones
 
