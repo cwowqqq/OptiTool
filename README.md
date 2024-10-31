@@ -11,7 +11,7 @@ funciones extra como mostrar la informacion del sistema y desinstalar aplicacion
 
 [**Descargar Beta mas reciente**](https://github.com/OptiStudioXD/OptiTool/releases/download/3.0-lastbeta/OptiTool.v3.0Beta3.zip)
 
-## Instalación
+## Instalación mediante .zip
 
 1. Descarga el archivo con el link de arriba
 
@@ -23,7 +23,7 @@ funciones extra como mostrar la informacion del sistema y desinstalar aplicacion
 
 6. Usalo!
 
-### Instalacion mediante Setup
+## Instalacion mediante Setup
 
 1. Ejecuta el setup
 
