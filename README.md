@@ -28,7 +28,7 @@
 4. Completa la instalación.
 5. Dirígete a la ubicación donde se instaló.
 6. Ejecuta `OptiTool.bat`.
-7. ¡A disfrutar!
+7. ¡A usarlo!
 
 
 ## 🛠️ Uso
