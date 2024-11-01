@@ -1,6 +1,6 @@
 # OptiTool
 
-OptiTool es una herramienta diseñada para optimizar y mejorar la eficiencia de tu tostadora gamer 
+OptiTool es una herramienta diseñada para optimizar y mejorar la eficiencia de tu tostadora gamer.
 
 ## Características
 
@@ -9,9 +9,9 @@ OptiTool es una herramienta diseñada para optimizar y mejorar la eficiencia de 
 
 ## Requisitos del Sistema
 
-- **Sistema Operativo**: Windows 95 o superior. MS-DOS 7.0 o superior
-- **Procesador**: Procesador Intel® Pentium® Pro de 200 MHz, caché de 512 K, y superiores
-- **Ram**: 50MB disponibles
+- **Sistema Operativo**: Windows 95 o superior. MS-DOS 7.0 o superior.
+- **Procesador**: Procesador Intel® Pentium® Pro de 200 MHz, caché de 512 K, y superiores.
+- **Ram**: 50 MB disponibles.
 
 ## Instalación
 
@@ -21,12 +21,11 @@ OptiTool es una herramienta diseñada para optimizar y mejorar la eficiencia de 
 
 ## Uso
 
-- Es un bat, es mas facil de usar que una cuchara
+Es un bat, es más fácil de usar que una cuchara.
 
 ## Contribuciones
 
-Si gustas contribuir, suscribete al [**canal de Youtube**](https://www.youtube.com/channel/UCwPlfaBfRgrAqPe8rZZmQew/)
-y descarga OptiTool :)
+Si gustas contribuir, suscríbete al [**canal de YouTube**](https://www.youtube.com/channel/UCwPlfaBfRgrAqPe8rZZmQew/) y descarga OptiTool :)
 
 ## Licencia
 
