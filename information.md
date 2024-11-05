@@ -6,6 +6,7 @@ OptiTool es una herramienta diseñada para optimizar y mejorar la eficiencia de 
 
 - **Optimización de Windows**: Reduce el consumo de recursos y mejora el rendimiento.
 - **Interfaz Amigable**: Diseñada para ser fácil de usar, sin necesidad de configuraciones complicadas.
+                           (eso si, no puedo decir lo mismo del Developer Mode)
 
 ## Requisitos del Sistema
 
