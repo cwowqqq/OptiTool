@@ -45,6 +45,6 @@ Este proyecto está bajo la [**MIT License**](https://goo.su/Zn6m). Puedes consu
 
 ## Nota de Hoy:
 
-La 3.9 me esta dando dolores de cabeza, sobre todo :runtimes y :down_an_projects, creo que esta version llegara como especial de navidad, nos vemos muchachos 
+La 3.9 me esta dando dolores de cabeza, sobre todo :runtimes, :down_an_projects y el nuevo setup, asi es, estoy haciendo un setup propio, creo que esta version llegara como especial de navidad, nos vemos muchachos 
 -OptiStudioXD (Fernando)
 
