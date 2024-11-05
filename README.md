@@ -1,7 +1,6 @@
 # **Project OptiTool**
 
 **Project OptiTool** es una herramienta diseñada para optimizar tu sistema, con funciones adicionales como mostrar información del sistema y desinstalar aplicaciones. 
-
 Este proyecto está orientado a mejorar el rendimiento de tu computadora mediante la limpieza y gestión de aplicaciones, procesos y configuraciones.
 
 ## 📥 Descargas
