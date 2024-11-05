@@ -1,0 +1,44 @@
+# Ignorar archivos temporales de Windows
+Thumbs.db
+Desktop.ini
+ehthumbs.db
+
+# Ignorar archivos temporales de compilación y logs
+*.bak
+*.swp
+*.swo
+*.tmp
+
+# Archivos generados por scripts de Windows
+*.exe
+*.dll
+*.pdb
+*.obj
+
+# Ignorar carpetas temporales
+$RECYCLE.BIN/
+$WINDOWS.~BT/
+$WINDOWS.~WS/
+ThumbCache/
+
+# Ignorar la carpeta de caché de Visual Studio
+.vs/
+.vscode/
+
+# Archivos de configuración local de JetBrains (IntelliJ, WebStorm, PhpStorm, etc.)
+.idea/
+
+# Archivos de configuración de Eclipse
+.project
+.classpath
+.cproject
+
+# Ignorar carpeta de node_modules (si es un proyecto Node.js)
+node_modules/
+
+# Ignorar archivos generados por Git para hacer merge de conflicto
+*.orig
+
+# Ignorar archivos generados por OS (MacOS, Linux)
+.DS_Store
+.directory
