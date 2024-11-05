@@ -43,3 +43,8 @@ La herramienta cuenta con una interfaz básica, ya que está hecha en **batchfil
 
 Este proyecto está bajo la [**MIT License**](https://goo.su/Zn6m). Puedes consultar el [**archivo de licencia**](https://goo.su/6wW3oc) para más detalles.
 
+## Nota de Hoy:
+
+La 3.9 me esta dando dolores de cabeza, sobre todo :runtimes y :down_an_projects, creo que esta version llegara como especial de navidad, nos vemos muchachos 
+-OptiStudioXD (Fernando)
+
