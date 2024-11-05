@@ -1,33 +1,38 @@
-# OptiTool
+# **OptiTool**
 
-OptiTool es una herramienta diseñada para optimizar y mejorar la eficiencia de tu tostadora gamer.
+**OptiTool** es una herramienta diseñada para optimizar y mejorar el rendimiento de tu sistema operativo, ¡perfecta para tu "tostadora gamer"!
 
-## Características
+## 🌟 Características
 
-- **Optimización de Windows**: Reduce el consumo de recursos y mejora el rendimiento.
-- **Interfaz Amigable**: Diseñada para ser fácil de usar, sin necesidad de configuraciones complicadas.
-                           (eso si, no puedo decir lo mismo del Developer Mode)
+- **Optimización de Windows**: Reduce el consumo de recursos y mejora el rendimiento general de tu PC.
+- **Interfaz amigable**: Fácil de usar, sin configuraciones complicadas. Aunque... no puedo decir lo mismo del **Modo Desarrollador** 😅.
 
-## Requisitos del Sistema
+## ⚙️ Requisitos del Sistema
 
 - **Sistema Operativo**: Windows 95 o superior. MS-DOS 7.0 o superior.
-- **Procesador**: Procesador Intel® Pentium® Pro de 200 MHz, caché de 512 K, y superiores.
-- **Ram**: 50 MB disponibles.
+- **Procesador**: Intel® Pentium® Pro de 200 MHz con caché de 512 KB o superior.
+- **Memoria RAM**: 50 MB disponibles (más que suficiente para una tostadora gamer).
+- **Espacio en Disco**: 80 MB libres para instalación y funcionamiento.
 
-## Instalación
+## 📥 Instalación
 
-1. Descarga la última versión de OptiTool desde [**README**](https://github.com/OptiStudioXD/OptiTool/blob/main/README.md).
+1. Descarga la última versión de **OptiTool** desde [**GitHub - OptiTool**](https://github.com/OptiStudioXD/OptiTool/releases).
 2. Descomprime el archivo ZIP en la ubicación de tu elección.
 3. Ejecuta `OptiTool.bat` para iniciar la aplicación.
 
-## Uso
+## 🛠️ Uso
 
-Es un bat, es más fácil de usar que una cuchara.
+Es un archivo **.bat**. ¡Más fácil de usar que una cuchara! Solo ejecuta el archivo y sigue las instrucciones en pantalla.
 
-## Contribuciones
+## 🤝 Contribuciones
 
-Si gustas contribuir, suscríbete al [**canal de YouTube**](https://www.youtube.com/channel/UCwPlfaBfRgrAqPe8rZZmQew/) y descarga OptiTool :)
+Si te gustaría contribuir, suscríbete al [**canal de YouTube**](https://www.youtube.com/channel/UCwPlfaBfRgrAqPe8rZZmQew/) y descarga **OptiTool**. ¡Toda ayuda es bienvenida!
 
-## Licencia
+## 📜 Licencia
 
-Este proyecto está licenciado bajo la Licencia MIT. Consulta el archivo [LICENSE](LICENSE) para más detalles.
+Este proyecto está licenciado bajo la Licencia **MIT**. Consulta el archivo [LICENSE](LICENSE) para más detalles.
+
+---
+
+*¡Gracias por usar OptiTool! Que tu PC siempre esté optimizada y libre de lag.* 🚀
+
