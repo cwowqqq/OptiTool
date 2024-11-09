@@ -1,54 +1,53 @@
 # **Project OptiTool**
 
-**Project OptiTool** es una herramienta diseñada para optimizar tu sistema, con funciones adicionales como mostrar información del sistema y desinstalar aplicaciones. 
-Este proyecto está orientado a mejorar el rendimiento de tu computadora mediante la limpieza y gestión de aplicaciones, procesos y configuraciones.
+**Project OptiTool** is a tool designed to optimize your system, with additional features such as displaying system information and uninstalling applications. This project is aimed at improving your computer's performance through cleaning and managing applications, processes, and settings.
 
-## 📥 Descargas
+## 📥 Downloads
 
-- [**Descargar Project OptiTool (zip)**](https://github.com/OptiStudioXD/OptiTool/releases/)
-- [**Descargar Instalador Setup de Project OptiTool**](https://github.com/OptiStudioXD/OptiTool/releases/download/3.5/OptiTool_setup_es.exe)
-- [**Descargar Ediciones para Linux**](https://goo.su/YCrUsg)
+- [**Download Project OptiTool (zip)**](https://github.com/OptiStudioXD/OptiTool/releases/)
+- [**Download Project OptiTool Setup Installer**](https://github.com/OptiStudioXD/OptiTool/releases/download/3.5/OptiTool_setup_es.exe)
+- [**Download Linux Editions**](https://goo.su/YCrUsg)
 
-## 🛠️ Instalación
+## 🛠️ Installation
 
-### Instalación mediante .zip
+### Installation via .zip
 
-1. Descarga el archivo utilizando el enlace proporcionado.
-2. Extrae el contenido en la carpeta de tu elección.
-3. Ingresa a la carpeta **OptiTool**.
-4. Ejecuta `OptiTool.bat`.
-5. ¡Disfruta de la herramienta!
+1. Download the file using the provided link.
+2. Extract the contents to a folder of your choice.
+3. Go to the **OptiTool** folder.
+4. Run `OptiTool.bat`.
+5. Enjoy the tool!
 
-### Instalación mediante Setup
+### Installation via Setup
 
-1. Ejecuta el instalador.
-2. Selecciona la carpeta donde deseas instalar el programa.
-3. Si lo deseas, puedes crear un acceso directo en el escritorio.
-4. Completa la instalación.
-5. Dirígete a la ubicación donde se instaló el programa.
-6. Ejecuta `OptiTool.bat`.
-7. ¡Listo para usar!
+1. Run the installer.
+2. Choose the folder where you want to install the program.
+3. Optionally, you can create a shortcut on the desktop.
+4. Complete the installation.
+5. Go to the installation folder.
+6. Run `OptiTool.bat`.
+7. Ready to use!
 
-## 🛠️ Uso
+## 🛠️ Usage
 
-La herramienta tiene una interfaz simple, ya que está hecha en `batchfile`. Cada botón tiene su respectiva función y el script incluye guías para ayudarte a usarla sin dificultad.
+The tool has a simple interface, as it is made in `batchfile`. Each button has its respective function, and the script includes guides to help you use it without difficulty.
 
-Las funcionalidades de **OptiTool** incluyen:
-- Optimización del sistema.
-- Mostrar información del sistema.
-- Desinstalación de aplicaciones.
-- Y más...
+The features of **OptiTool** include:
+- System optimization.
+- Displaying system information.
+- Uninstalling applications.
+- And more...
 
-## 🤝 Contribuciones
+## 🤝 Contributions
 
-¿Te gustaría contribuir al proyecto? Visita nuestro canal de [**YouTube**](https://www.youtube.com/channel/UCwPlfaBfRgrAqPe8rZZmQew) está muerto, pero ya lo estoy reviviendo.
+Would you like to contribute to the project? Visit our [**YouTube**](https://www.youtube.com/channel/UCwPlfaBfRgrAqPe8rZZmQew) channel, it’s currently inactive, but I’m working on reviving it.
 
-## 📜 Licencia
+## 📜 License
 
-Este proyecto está bajo la [**MIT License**](https://goo.su/Zn6m). Puedes consultar el [**archivo de licencia**](https://goo.su/6wW3oc) para más detalles.
+This project is licensed under the [**MIT License**](https://goo.su/Zn6m). You can consult the [**license file**](https://goo.su/6wW3oc) for more details.
 
-## ⚠️ Nota del desarrollador
+## ⚠️ Developer's Note
 
-> La versión **3.9** me está dando dolores de cabeza, sobre todo con los módulos **runtimes**, **down_an_projects** y el nuevo instalador. Estoy trabajando en un nuevo setup propio, ¡espero que la versión especial de Navidad esté lista a tiempo! 
+> Version **3.9** is giving me headaches, especially with the **runtimes**, **down_an_projects** modules, and the new installer. I’m working on a new setup of my own, and I hope the special Christmas version will be ready in time!
 
 - **OptiStudioXD (Fernando)**
