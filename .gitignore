@@ -1,44 +1,62 @@
-# Ignorar archivos temporales de Windows
+# Archivos temporales y de sistema de Windows
 Thumbs.db
-Desktop.ini
 ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
 
-# Ignorar archivos temporales de compilación y logs
+# Archivos de configuración del sistema y de usuario
+.vscode/
+.idea/
+*.log
 *.bak
 *.swp
 *.swo
-*.tmp
 
-# Archivos generados por scripts de Windows
+# Archivos del sistema de compilación (si usas algún compilador o generador de scripts)
 *.exe
 *.dll
 *.pdb
 *.obj
+*.lib
 
-# Ignorar carpetas temporales
-$RECYCLE.BIN/
-$WINDOWS.~BT/
-$WINDOWS.~WS/
-ThumbCache/
+# Archivos generados por herramientas de instalación (como el instalador .exe)
+*.msi
+*.cab
+*.tar
+*.zip
 
-# Ignorar la carpeta de caché de Visual Studio
-.vs/
-.vscode/
-
-# Archivos de configuración local de JetBrains (IntelliJ, WebStorm, PhpStorm, etc.)
-.idea/
-
-# Archivos de configuración de Eclipse
-.project
-.classpath
-.cproject
-
-# Ignorar carpeta de node_modules (si es un proyecto Node.js)
+# Archivos de configuración de npm, si tu proyecto usa Node.js (si no es el caso, puedes ignorar esta sección)
 node_modules/
 
-# Ignorar archivos generados por Git para hacer merge de conflicto
-*.orig
+# Archivos temporales de editores de texto
+*.sublime-workspace
+*.sublime-project
 
-# Ignorar archivos generados por OS (MacOS, Linux)
-.DS_Store
-.directory
+# Otros archivos de configuración de usuario
+*.DS_Store  # macOS
+.vscode/      # Visual Studio Code
+.idea/        # IntelliJ/JetBrains
+
+# Archivos de Windows específicos
+*.bak
+*.tmp
+*.swp
+*.swo
+
+# Excluir archivos de compilación
+*.log
+
+# Archivos generados por el sistema o compiladores específicos (ajusta según el caso)
+build/
+dist/
+out/
+
+# Archivos de Python, si estuvieras usando Python en algún momento
+*.pyc
+*.pyo
+*.pyd
+__pycache__/
+
+# Archivos de otros sistemas que puedas tener (por ejemplo, Linux o macOS)
+*.swp
+*.swo
