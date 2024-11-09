@@ -35,6 +35,9 @@
 
 ### OptiTool v3.5
 - **Descripcion**: La mejor version de las 3.0, corrigio muchos errores y agrego mas optimizaciones
+  
+### OptiTool v3.9
+- **Descripcion**: Una de las mejores versiones de las 3.0, solo por detras de la 3.5
 ---
 
 ## Notas
