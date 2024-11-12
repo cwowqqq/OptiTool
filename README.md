@@ -48,6 +48,6 @@ This project is licensed under the [**MIT License**](https://goo.su/Zn6m). You c
 
 ## ⚠️ Developer's Note
 
-> Version **3.9** is giving me headaches, especially with the **runtimes**, **down_an_projects** modules, and the new installer. I’m working on a new setup of my own, and I hope the special Christmas version will be ready in time!
+> Sorry, but version 3.9 had to be cut down. Now the real best version will be 4.0, i really sorry.
 
 - **OptiStudioXD (Fernando)**
