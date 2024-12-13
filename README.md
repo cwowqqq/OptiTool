@@ -48,6 +48,8 @@ This project is licensed under the [**MIT License**](https://goo.su/Zn6m). You c
 
 ## ⚠️ Developer's Note
 
-> Sorry, but version 3.9 had to be cut down. Now the real best version will be 4.0, i really sorry.
+> Working on 4.0 bros.
+
+> PD: Dont download optitool via Code > Download ZIP
 
 - **OptiStudioXD (Fernando)**
