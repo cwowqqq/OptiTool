@@ -6,8 +6,6 @@ set OPTI_TEXT=OptiTool - Script de optimizacion
 set WGET="%~dp0Assets\wget.exe"
 set FFPLAY="%~dp0Assets\ffplay.exe"
 
-:: Espero que OptiJuegos no se enoje por esto (el codigo para solicitar admin, todo lo demas fue hecho por mi y por ayuda de BlackBoxAI o ChatGPT)
-
 :: Solicita permisos de administrador
 REM  --> Verificar si el script tiene permisos
     IF "%PROCESSOR_ARCHITECTURE%" EQU "amd64" (
@@ -97,6 +95,13 @@ echo *2 - Crear punto de restauracion (Recomendado)
 echo *3 - Opciones de Defender
 echo *4 - Opciones extremas
 echo *5 - Opciones adicionales
+echo.
+echo FELIZ NAVIDAD!
+echo Para celebrar la navidad, yo y ChadGPT, hemos decidido empezar a construir las
+echo ediciones para Linux de OptiTool con mas empeno! Tambien estamos trabajando
+echo duro para la 4.0 y 5.0, la 4.0 no sera tan grande, pero la 5.0 si!
+echo.
+echo - Att. OptiStudioXD 
 echo.
 
 :: Comandos para elegir las opciones
