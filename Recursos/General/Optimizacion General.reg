@@ -1,0 +1,581 @@
+Windows Registry Editor Version 5.00
+
+; Desactivar servicios innecesarios
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\W32Time]
+"Start"=dword:00000004
+
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\Fax]
+"Start"=dword:00000004
+
+; Aumentar el rendimiento del sistema
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\PriorityControl]
+"Win32PrioritySeparation"=dword:00000001
+
+; Desactivar la indexación de archivos
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows Search]
+"SetupCompletedSuccessfully"=dword:00000000
+
+; Mejorar la experiencia de juegos
+[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Policies\System]
+"DisableTaskMgr"=dword:00000000
+
+; Borrar la telemetria
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\DiagTrack]
+"Start"=dword:00000004
+
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\dmwappushservice]
+"Start"=dword:00000004
+
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\diagsvc]
+"Start"=dword:00000004
+
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\DPS]
+"Start"=dword:00000004
+
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\diagnosticshub.standardcollector.service]
+"Start"=dword:00000004
+
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\WdiServiceHost]
+"Start"=dword:00000004
+
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\WdiSystemHost]
+"Start"=dword:00000004
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\AppCompat]
+"AITEnable"=dword:00000000
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\DataCollection]
+"AllowTelemetry"=dword:00000000
+
+[HKEY_LOCAL_MACHINE\Software\Microsoft\Windows\CurrentVersion\Internet Settings\ZoneMap\Domains\vortex.data.microsoft.com]
+"*"=dword:00000004
+
+[HKEY_LOCAL_MACHINE\Software\Microsoft\Windows\CurrentVersion\Internet Settings\ZoneMap\Domains\vortex-win.data.microsoft.com]
+"*"=dword:00000004
+
+[HKEY_LOCAL_MACHINE\Software\Microsoft\Windows\CurrentVersion\Internet Settings\ZoneMap\Domains\telecommand.telemetry.microsoft.com]
+"*"=dword:00000004
+
+[HKEY_LOCAL_MACHINE\Software\Microsoft\Windows\CurrentVersion\Internet Settings\ZoneMap\Domains\telecommand.telemetry.microsoft.com.nsatc.net]
+"*"=dword:00000004
+
+[HKEY_LOCAL_MACHINE\Software\Microsoft\Windows\CurrentVersion\Internet Settings\ZoneMap\Domains\oca.telemetry.microsoft.com.nsatc.net]
+"*"=dword:00000004
+
+[HKEY_LOCAL_MACHINE\Software\Microsoft\Windows\CurrentVersion\Internet Settings\ZoneMap\Domains\sqm.telemetry.microsoft.com]
+"*"=dword:00000004
+
+[HKEY_LOCAL_MACHINE\Software\Microsoft\Windows\CurrentVersion\Internet Settings\ZoneMap\Domains\sqm.telemetry.microsoft.com.nsatc.net]
+"*"=dword:00000004
+
+[HKEY_LOCAL_MACHINE\Software\Microsoft\Windows\CurrentVersion\Internet Settings\ZoneMap\Domains\watson.telemetry.microsoft.com]
+"*"=dword:00000004
+
+[HKEY_LOCAL_MACHINE\Software\Microsoft\Windows\CurrentVersion\Internet Settings\ZoneMap\Domains\watson.telemetry.microsoft.com.nsatc.net]
+"*"=dword:00000004
+
+[HKEY_LOCAL_MACHINE\Software\Microsoft\Windows\CurrentVersion\Internet Settings\ZoneMap\Domains\redir.metaservices.microsoft.com]
+"*"=dword:00000004
+
+[HKEY_LOCAL_MACHINE\Software\Microsoft\Windows\CurrentVersion\Internet Settings\ZoneMap\Domains\choice.microsoft.com]
+"*"=dword:00000004
+
+[HKEY_LOCAL_MACHINE\Software\Microsoft\Windows\CurrentVersion\Internet Settings\ZoneMap\Domains\choice.microsoft.com.nsatc.net]
+"*"=dword:00000004
+
+[HKEY_LOCAL_MACHINE\Software\Microsoft\Windows\CurrentVersion\Internet Settings\ZoneMap\Domains\df.telemetry.microsoft.com]
+"*"=dword:00000004
+
+[HKEY_LOCAL_MACHINE\Software\Microsoft\Windows\CurrentVersion\Internet Settings\ZoneMap\Domains\reports.wes.df.telemetry.microsoft.com]
+"*"=dword:00000004
+
+[HKEY_LOCAL_MACHINE\Software\Microsoft\Windows\CurrentVersion\Internet Settings\ZoneMap\Domains\wes.df.telemetry.microsoft.com]
+"*"=dword:00000004
+
+[HKEY_LOCAL_MACHINE\Software\Microsoft\Windows\CurrentVersion\Internet Settings\ZoneMap\Domains\services.wes.df.telemetry.microsoft.com]
+"*"=dword:00000004
+
+[HKEY_LOCAL_MACHINE\Software\Microsoft\Windows\CurrentVersion\Internet Settings\ZoneMap\Domains\sqm.df.telemetry.microsoft.com]
+"*"=dword:00000004
+
+[HKEY_LOCAL_MACHINE\Software\Microsoft\Windows\CurrentVersion\Internet Settings\ZoneMap\Domains\telemetry.microsoft.com]
+"*"=dword:00000004
+
+[HKEY_LOCAL_MACHINE\Software\Microsoft\Windows\CurrentVersion\Internet Settings\ZoneMap\Domains\watson.ppe.telemetry.microsoft.com]
+"*"=dword:00000004
+
+[HKEY_LOCAL_MACHINE\Software\Microsoft\Windows\CurrentVersion\Internet Settings\ZoneMap\Domains\telemetry.appex.bing.net]
+"*"=dword:00000004
+
+[HKEY_LOCAL_MACHINE\Software\Microsoft\Windows\CurrentVersion\Internet Settings\ZoneMap\Domains\telemetry.urs.microsoft.com]
+"*"=dword:00000004
+
+[HKEY_LOCAL_MACHINE\Software\Microsoft\Windows\CurrentVersion\Internet Settings\ZoneMap\Domains\settings-sandbox.data.microsoft.com]
+"*"=dword:00000004
+
+[HKEY_LOCAL_MACHINE\Software\Microsoft\Windows\CurrentVersion\Internet Settings\ZoneMap\Domains\vortex-sandbox.data.microsoft.com]
+"*"=dword:00000004
+
+[HKEY_LOCAL_MACHINE\Software\Microsoft\Windows\CurrentVersion\Internet Settings\ZoneMap\Domains\survey.watson.microsoft.com]
+"*"=dword:00000004
+
+[HKEY_LOCAL_MACHINE\Software\Microsoft\Windows\CurrentVersion\Internet Settings\ZoneMap\Domains\watson.live.com]
+"*"=dword:00000004
+
+[HKEY_LOCAL_MACHINE\Software\Microsoft\Windows\CurrentVersion\Internet Settings\ZoneMap\Domains\watson.microsoft.com]
+"*"=dword:00000004
+
+[HKEY_LOCAL_MACHINE\Software\Microsoft\Windows\CurrentVersion\Internet Settings\ZoneMap\Domains\statsfe2.ws.microsoft.com]
+"*"=dword:00000004
+
+[HKEY_LOCAL_MACHINE\Software\Microsoft\Windows\CurrentVersion\Internet Settings\ZoneMap\Domains\corpext.msitadfs.glbdns2.microsoft.com]
+"*"=dword:00000004
+
+[HKEY_LOCAL_MACHINE\Software\Microsoft\Windows\CurrentVersion\Internet Settings\ZoneMap\Domains\compatexchange.cloudapp.net]
+"*"=dword:00000004
+
+[HKEY_LOCAL_MACHINE\Software\Microsoft\Windows\CurrentVersion\Internet Settings\ZoneMap\Domains\cs1.wpc.v0cdn.net]
+"*"=dword:00000004
+
+[HKEY_LOCAL_MACHINE\Software\Microsoft\Windows\CurrentVersion\Internet Settings\ZoneMap\Domains\a-0001.a-msedge.net]
+"*"=dword:00000004
+
+[HKEY_LOCAL_MACHINE\Software\Microsoft\Windows\CurrentVersion\Internet Settings\ZoneMap\Domains\statsfe2.update.microsoft.com.akadns.net]
+"*"=dword:00000004
+
+[HKEY_LOCAL_MACHINE\Software\Microsoft\Windows\CurrentVersion\Internet Settings\ZoneMap\Domains\sls.update.microsoft.com.akadns.net]
+"*"=dword:00000004
+
+[HKEY_LOCAL_MACHINE\Software\Microsoft\Windows\CurrentVersion\Internet Settings\ZoneMap\Domains\fe2.update.microsoft.com.akadns.net]
+"*"=dword:00000004
+
+[HKEY_LOCAL_MACHINE\Software\Microsoft\Windows\CurrentVersion\Internet Settings\ZoneMap\Domains\diagnostics.support.microsoft.com]
+"*"=dword:00000004
+
+[HKEY_LOCAL_MACHINE\Software\Microsoft\Windows\CurrentVersion\Internet Settings\ZoneMap\Domains\corp.sts.microsoft.com]
+"*"=dword:00000004
+
+[HKEY_LOCAL_MACHINE\Software\Microsoft\Windows\CurrentVersion\Internet Settings\ZoneMap\Domains\statsfe1.ws.microsoft.com]
+"*"=dword:00000004
+
+[HKEY_LOCAL_MACHINE\Software\Microsoft\Windows\CurrentVersion\Internet Settings\ZoneMap\Domains\pre.footprintpredict.com]
+"*"=dword:00000004
+
+[HKEY_LOCAL_MACHINE\Software\Microsoft\Windows\CurrentVersion\Internet Settings\ZoneMap\Domains\i1.services.social.microsoft.com]
+"*"=dword:00000004
+
+[HKEY_LOCAL_MACHINE\Software\Microsoft\Windows\CurrentVersion\Internet Settings\ZoneMap\Domains\i1.services.social.microsoft.com.nsatc.net]
+"*"=dword:00000004
+
+[HKEY_LOCAL_MACHINE\Software\Microsoft\Windows\CurrentVersion\Internet Settings\ZoneMap\Domains\feedback.windows.com]
+"*"=dword:00000004
+
+[HKEY_LOCAL_MACHINE\Software\Microsoft\Windows\CurrentVersion\Internet Settings\ZoneMap\Domains\feedback.microsoft-hohm.com]
+"*"=dword:00000004
+
+[HKEY_LOCAL_MACHINE\Software\Microsoft\Windows\CurrentVersion\Internet Settings\ZoneMap\Domains\feedback.search.microsoft.com]
+"*"=dword:00000004
+
+[HKEY_LOCAL_MACHINE\Software\Microsoft\Windows\CurrentVersion\Internet Settings\ZoneMap\Domains\rad.msn.com]
+"*"=dword:00000004
+
+[HKEY_LOCAL_MACHINE\Software\Microsoft\Windows\CurrentVersion\Internet Settings\ZoneMap\Domains\preview.msn.com]
+"*"=dword:00000004
+
+[HKEY_LOCAL_MACHINE\Software\Microsoft\Windows\CurrentVersion\Internet Settings\ZoneMap\Domains\ad.doubleclick.net]
+"*"=dword:00000004
+
+[HKEY_LOCAL_MACHINE\Software\Microsoft\Windows\CurrentVersion\Internet Settings\ZoneMap\Domains\ads.msn.com]
+"*"=dword:00000004
+
+[HKEY_LOCAL_MACHINE\Software\Microsoft\Windows\CurrentVersion\Internet Settings\ZoneMap\Domains\ads1.msads.net]
+"*"=dword:00000004
+
+[HKEY_LOCAL_MACHINE\Software\Microsoft\Windows\CurrentVersion\Internet Settings\ZoneMap\Domains\ads1.msn.com]
+"*"=dword:00000004
+
+[HKEY_LOCAL_MACHINE\Software\Microsoft\Windows\CurrentVersion\Internet Settings\ZoneMap\Domains\a.ads1.msn.com]
+"*"=dword:00000004
+
+[HKEY_LOCAL_MACHINE\Software\Microsoft\Windows\CurrentVersion\Internet Settings\ZoneMap\Domains\a.ads2.msn.com]
+"*"=dword:00000004
+
+[HKEY_LOCAL_MACHINE\Software\Microsoft\Windows\CurrentVersion\Internet Settings\ZoneMap\Domains\adnexus.net]
+"*"=dword:00000004
+
+[HKEY_LOCAL_MACHINE\Software\Microsoft\Windows\CurrentVersion\Internet Settings\ZoneMap\Domains\adnxs.com]
+"*"=dword:00000004
+
+[HKEY_LOCAL_MACHINE\Software\Microsoft\Windows\CurrentVersion\Internet Settings\ZoneMap\Domains\az361816.vo.msecnd.net]
+"*"=dword:00000004
+
+; Optimiza los servicios xd
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\WbioSrvc]
+"Start"=dword:00000004
+
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\FontCache]
+"Start"=dword:00000004
+
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\FontCache3.0.0.0]
+"Start"=dword:00000004
+
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\GraphicsPerfSvc]
+"Start"=dword:00000004
+
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\stisvc]
+"Start"=dword:00000004
+
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\WerSvc]
+"Start"=dword:00000004
+
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\PcaSvc]
+"Start"=dword:00000004
+
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\Wecsvc]
+"Start"=dword:00000004
+
+; Hace que el sistema se enfoque mas en los juegos
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\3DMark06.exe\PerfOptions]
+"CpuPriorityClass"=dword:00000006
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\3DMark05.exe\PerfOptions]
+"CpuPriorityClass"=dword:00000006
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\3DMark03.exe\PerfOptions]
+"CpuPriorityClass"=dword:00000006
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\PCMark05.exe\PerfOptions]
+"CpuPriorityClass"=dword:00000006
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\DriverParallelLines.exe\PerfOptions]
+"CpuPriorityClass"=dword:00000006
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\polybridge.exe\PerfOptions]
+"CpuPriorityClass"=dword:00000006
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\funkin.exe\PerfOptions]
+"CpuPriorityClass"=dword:00000006
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\psxfin.exe\PerfOptions]
+"CpuPriorityClass"=dword:00000006
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\Sam2.exe\PerfOptions]
+"CpuPriorityClass"=dword:00000006
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\FEAR.exe\PerfOptions]
+"CpuPriorityClass"=dword:00000006
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\FFXiWinBench.exe\PerfOptions]
+"CpuPriorityClass"=dword:00000006
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\WoW.exe\PerfOptions]
+"CpuPriorityClass"=dword:00000006
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\RelicCOH.exe\PerfOptions]
+"CpuPriorityClass"=dword:00000006
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\age3.exe\PerfOptions]
+"CpuPriorityClass"=dword:00000006
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\BF2.exe\PerfOptions]
+"CpuPriorityClass"=dword:00000006
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\BF2142.exe\PerfOptions]
+"CpuPriorityClass"=dword:00000006
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\cod2sp_s.exe\PerfOptions]
+"CpuPriorityClass"=dword:00000006
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\cod2mp_s.exe\PerfOptions]
+"CpuPriorityClass"=dword:00000006
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\dreamfall.exe\PerfOptions]
+"CpuPriorityClass"=dword:00000006
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\MAINAPP.exe\PerfOptions]
+"CpuPriorityClass"=dword:00000006
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\fsx.exe\PerfOptions]
+"CpuPriorityClass"=dword:00000006
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\ArmyOps.exe\PerfOptions]
+"CpuPriorityClass"=dword:00000006
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\SPLINTERCELL3.exe\PerfOptions]
+"CpuPriorityClass"=dword:00000006
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\CoDSP.exe\PerfOptions]
+"CpuPriorityClass"=dword:00000006
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\CoDUOSP.exe\PerfOptions]
+"CpuPriorityClass"=dword:00000006
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\FarCry.exe\PerfOptions]
+"CpuPriorityClass"=dword:00000006
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\FEARXP.exe\PerfOptions]
+"CpuPriorityClass"=dword:00000006
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\GRAW.exe\PerfOptions]
+"CpuPriorityClass"=dword:00000006
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\H5_GAME.exe\PerfOptions]
+"CpuPriorityClass"=dword:00000006
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\FIFA09.exe\PerfOptions]
+"CpuPriorityClass"=dword:00000006
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\hl2.exe\PerfOptions]
+"CpuPriorityClass"=dword:00000006
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\hl.exe\PerfOptions]
+"CpuPriorityClass"=dword:00000006
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\hitman2.exe\PerfOptions]
+"CpuPriorityClass"=dword:00000006
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\HitmanContracts.exe\PerfOptions]
+"CpuPriorityClass"=dword:00000006
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\MaxPayne2.exe\PerfOptions]
+"CpuPriorityClass"=dword:00000006
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\nfsMW.exe\PerfOptions]
+"CpuPriorityClass"=dword:00000006
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\Lockdown.exe\PerfOptions]
+"CpuPriorityClass"=dword:00000006
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\SniperElite.exe\PerfOptions]
+"CpuPriorityClass"=dword:00000006
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\Swat4.exe\PerfOptions]
+"CpuPriorityClass"=dword:00000006
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\Swat4X.exe\PerfOptions]
+"CpuPriorityClass"=dword:00000006
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\KOTT2.exe\PerfOptions]
+"CpuPriorityClass"=dword:00000006
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\FA.exe\PerfOptions]
+"CpuPriorityClass"=dword:00000006
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\LChAp2008.exe\PerfOptions]
+"CpuPriorityClass"=dword:00000006
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\PES6.exe\PerfOptions]
+"CpuPriorityClass"=dword:00000006
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\pcsx2.exe\PerfOptions]
+"CpuPriorityClass"=dword:00000006
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\pes2009.exe\PerfOptions]
+"CpuPriorityClass"=dword:00000006
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\VT3.EXE\PerfOptions]
+"CpuPriorityClass"=dword:00000006
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\csgo.exe\PerfOptions]
+"CpuPriorityClass"=dword:00000006
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\cs2.exe\PerfOptions]
+"CpuPriorityClass"=dword:00000006
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\FortniteClient-Win64-Shipping.exe\PerfOptions]
+"CpuPriorityClass"=dword:00000006
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\gta3.exe\PerfOptions]
+"CpuPriorityClass"=dword:00000006
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\gta_vc.exe\PerfOptions]
+"CpuPriorityClass"=dword:00000006
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\gta_sa.exe\PerfOptions]
+"CpuPriorityClass"=dword:00000006
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\GTAIV.exe\PerfOptions]
+"CpuPriorityClass"=dword:00000006
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\GTA5.exe\PerfOptions]
+"CpuPriorityClass"=dword:00000006
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\java.exe\PerfOptions]
+"CpuPriorityClass"=dword:00000006
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\javaw.exe\PerfOptions]
+"CpuPriorityClass"=dword:00000006
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\minecraft.exe\PerfOptions]
+"CpuPriorityClass"=dword:00000006
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\Minecraft.Windows.exe\PerfOptions]
+"CpuPriorityClass"=dword:00000006
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\obs32.exe\PerfOptions]
+"CpuPriorityClass"=dword:00000006
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\obs64.exe\PerfOptions]
+"CpuPriorityClass"=dword:00000006
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\OptiCraft.exe\PerfOptions]
+"CpuPriorityClass"=dword:00000006
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\pes6.exe\PerfOptions]
+"CpuPriorityClass"=dword:00000006
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\pes13.exe\PerfOptions]
+"CpuPriorityClass"=dword:00000006
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\pes17.exe\PerfOptions]
+"CpuPriorityClass"=dword:00000006
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\cyberpunk2077.exe\PerfOptions]
+"CpuPriorityClass"=dword:00000006
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\ACValhalla.exe\PerfOptions]
+"CpuPriorityClass"=dword:00000006
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\Warzone.exe\PerfOptions]
+"CpuPriorityClass"=dword:00000006
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\FIFA22.exe\PerfOptions]
+"CpuPriorityClass"=dword:00000006
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\re8.exe\PerfOptions]
+"CpuPriorityClass"=dword:00000006
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\hitman3.exe\PerfOptions]
+"CpuPriorityClass"=dword:00000006
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\outriders.exe\PerfOptions]
+"CpuPriorityClass"=dword:00000006
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\MELE.exe\PerfOptions]
+"CpuPriorityClass"=dword:00000006
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\FarCry6.exe\PerfOptions]
+"CpuPriorityClass"=dword:00000006
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\Battlefield2042.exe\PerfOptions]
+"CpuPriorityClass"=dword:00000006
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\DOOMEternalx64vk.exe\PerfOptions]
+"CpuPriorityClass"=dword:00000006
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\RDR2.exe\PerfOptions]
+"CpuPriorityClass"=dword:00000006
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\MetroExodus.exe\PerfOptions]
+"CpuPriorityClass"=dword:00000006
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\HorizonZeroDawn.exe\PerfOptions]
+"CpuPriorityClass"=dword:00000006
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\DyingLight2.exe\PerfOptions]
+"CpuPriorityClass"=dword:00000006
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\CODVanguard.exe\PerfOptions]
+"CpuPriorityClass"=dword:00000006
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\Diablo4.exe\PerfOptions]
+"CpuPriorityClass"=dword:00000006
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\Starfield.exe\PerfOptions]
+"CpuPriorityClass"=dword:00000006
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\EldenRing.exe\PerfOptions]
+"CpuPriorityClass"=dword:00000006
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\Sekiro.exe\PerfOptions]
+"CpuPriorityClass"=dword:00000006
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\Ghostrunner.exe\PerfOptions]
+"CpuPriorityClass"=dword:00000006
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\ResidentEvil3.exe\PerfOptions]
+"CpuPriorityClass"=dword:00000006
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\PES2022.exe\PerfOptions]
+"CpuPriorityClass"=dword:00000006
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\Hitman2.exe\PerfOptions]
+"CpuPriorityClass"=dword:00000006
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\Deathloop.exe\PerfOptions]
+"CpuPriorityClass"=dword:00000006
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\WatchDogsLegion.exe\PerfOptions]
+"CpuPriorityClass"=dword:00000006
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\Minecraft.exe\PerfOptions]
+"CpuPriorityClass"=dword:00000006
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\RatchetAndClank.exe\PerfOptions]
+"CpuPriorityClass"=dword:00000006
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\DemonSouls.exe\PerfOptions]
+"CpuPriorityClass"=dword:00000006
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\FinalFantasyVII.exe\PerfOptions]
+"CpuPriorityClass"=dword:00000006
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\HogwartsLegacy.exe\PerfOptions]
+"CpuPriorityClass"=dword:00000006
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\Battlefield6.exe\PerfOptions]
+"CpuPriorityClass"=dword:00000006
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\StarCitizen.exe\PerfOptions]
+"CpuPriorityClass"=dword:00000006
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\TheWitcher4.exe\PerfOptions]
+"CpuPriorityClass"=dword:00000006
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\Borderlands4.exe\PerfOptions]
+"CpuPriorityClass"=dword:00000006
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\Sims5.exe\PerfOptions]
+"CpuPriorityClass"=dword:00000006
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\ElderScrolls6.exe\PerfOptions]
+"CpuPriorityClass"=dword:00000006
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\Overwatch2.exe\PerfOptions]
+"CpuPriorityClass"=dword:00000006
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\RainbowSixQuarantine.exe\PerfOptions]
+"CpuPriorityClass"=dword:00000006
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\GTA6.exe\PerfOptions]
+"CpuPriorityClass"=dword:00000006
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\ForzaHorizon5.exe\PerfOptions]
+"CpuPriorityClass"=dword:00000006
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\HaloInfinite.exe\PerfOptions]
+"CpuPriorityClass"=dword:00000006
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\StarWarsJediFallenOrder2.exe\PerfOptions]
+"CpuPriorityClass"=dword:00000006
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\Bioshock4.exe\PerfOptions]
+"CpuPriorityClass"=dword:00000006
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\Wolfenstein3.exe\PerfOptions]
+"CpuPriorityClass"=dword:00000006
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\EvilWithin3.exe\PerfOptions]
+"CpuPriorityClass"=dword:00000006
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\DeusEx4.exe\PerfOptions]
+"CpuPriorityClass"=dword:00000006
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\MetroLastLight.exe\PerfOptions]
+"CpuPriorityClass"=dword:00000006
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\PPSSPP.exe\PerfOptions]
+"CpuPriorityClass"=dword:00000006
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\PCSX2.exe\PerfOptions]
+"CpuPriorityClass"=dword:00000006

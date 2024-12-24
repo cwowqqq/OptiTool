@@ -1,0 +1,21 @@
+Windows Registry Editor Version 5.00
+
+; Desactivar animaciones para mejorar el rendimiento
+[HKEY_CURRENT_USER\Control Panel\Desktop]
+"VisualEffect"="3"
+
+; Aumentar la velocidad de menú
+[HKEY_CURRENT_USER\Control Panel\Desktop]
+"MenuShowDelay"="0"
+
+; Desactivar la recopilación de información de uso
+[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Policies\System]
+"EnableLUA"=dword:00000000
+
+; Desactivar la Indexación de archivos
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows Search]
+"SetupCompletedSuccessfully"=dword:00000000
+
+; Desactivar la vista previa de archivos en el Explorador
+[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Policies\Explorer]
+"NoThumbnailCache"=dword:00000001
