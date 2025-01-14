@@ -12,20 +12,20 @@ $RECYCLE.BIN/
 *.swp
 *.swo
 
-# Archivos del sistema de compilación (si usas algún compilador o generador de scripts)
+# Archivos del sistema de compilación
 *.exe
 *.dll
 *.pdb
 *.obj
 *.lib
 
-# Archivos generados por herramientas de instalación (como el instalador .exe)
+# Archivos generados por herramientas de instalación
 *.msi
 *.cab
 *.tar
 *.zip
 
-# Archivos de configuración de npm, si tu proyecto usa Node.js (si no es el caso, puedes ignorar esta sección)
+# Archivos de configuración de npm, si tu proyecto usa Node.js
 node_modules/
 
 # Archivos temporales de editores de texto
@@ -46,17 +46,17 @@ node_modules/
 # Excluir archivos de compilación
 *.log
 
-# Archivos generados por el sistema o compiladores específicos (ajusta según el caso)
+# Archivos generados por el sistema o compiladores específicos
 build/
 dist/
 out/
 
-# Archivos de Python, si estuvieras usando Python en algún momento
+# Archivos de Python
 *.pyc
 *.pyo
 *.pyd
 __pycache__/
 
-# Archivos de otros sistemas que puedas tener (por ejemplo, Linux o macOS)
+# Archivos de otros sistemas que puedo tener
 *.swp
 *.swo
