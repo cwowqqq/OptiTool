@@ -96,11 +96,11 @@ echo *3 - Opciones de Defender
 echo *4 - Opciones extremas
 echo *5 - Opciones adicionales
 echo.
-echo FELIZ NAVIDAD!
-echo Para celebrar la navidad, yo y ChadGPT, hemos decidido empezar a construir las
-echo ediciones para Linux de OptiTool con mas empeno! Tambien estamos trabajando
-echo duro para la 4.0 y 5.0, la 4.0 no sera tan grande, pero la 5.0 si!
+echo AVISO:
+echo Lamentamos los retrasos de la version 4.0, debido a las Fiestas de Año Nuevo,
+echo nos vemos obligados a tener que retrasar la 4.0 hasta Febrero o Marzo
 echo.
+echo Les ofrecemos una sincera disculpa.
 echo - Att. OptiStudioXD 
 echo.
 
