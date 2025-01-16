@@ -48,8 +48,7 @@ This project is licensed under the [**MIT License**](https://goo.su/Zn6m). You c
 
 ## ⚠️ Developer's Note
 
-> Working on 4.0 bros.
-
-> PD: Dont download optitool via Code > Download ZIP
+> Actualizaremos el sistema de versiones de GitHub, ahora en vez de basarse en FixPacket, usaremos Rev, por ejemplo:
+> 3.9 Rev A
 
 - **OptiStudioXD (Fernando)**
