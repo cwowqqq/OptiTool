@@ -53,4 +53,4 @@ This project is licensed under the [**MIT License**](https://goo.su/Zn6m). You c
 > de la 4.0, se pensara muy bien si cancelar este proyecto.
 
 > De todo corazon:
-- **OptiStudioXD**
+- **OptiTool Team y OptiStudioXD**
