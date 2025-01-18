@@ -42,6 +42,8 @@ The features of **OptiTool** include:
 
 Would you like to contribute to the project? Visit our [**YouTube**](https://www.youtube.com/channel/UCwPlfaBfRgrAqPe8rZZmQew) channel, it’s currently inactive, but I’m working on reviving it.
 
+**No one has contributed**
+
 ## ⚠️ Developer's Note
 
 > Project: OptiTool no ha tenido un camino dificil, ni bueno, pero el creador penso
