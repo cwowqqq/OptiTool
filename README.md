@@ -48,7 +48,9 @@ This project is licensed under the [**MIT License**](https://goo.su/Zn6m). You c
 
 ## ⚠️ Developer's Note
 
-> Actualizaremos el sistema de versiones de GitHub, ahora en vez de basarse en FixPacket, usaremos Rev, por ejemplo:
-> 3.9 Rev A
+> Project: OptiTool no ha tenido un camino dificil, ni bueno, pero el creador penso
+> en cancelar el Proyecto debido a escasas descargas y nulo apoyo, asi que despues
+> de la 4.0, se pensara muy bien si cancelar este proyecto.
 
-- **OptiStudioXD (Fernando)**
+> De todo corazon:
+- **OptiStudioXD**
