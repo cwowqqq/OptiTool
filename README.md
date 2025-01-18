@@ -28,6 +28,12 @@
 6. Run `OptiTool.bat`.
 7. Ready to use!
 
+## 📧 Mail
+
+The new OptiStudio electronic mail is:
+
+**optistudio@hotmail.com**
+
 ## 🛠️ Usage
 
 The tool has a simple interface, as it is made in `batchfile`. Each button has its respective function, and the script includes guides to help you use it without difficulty.
