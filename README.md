@@ -42,10 +42,6 @@ The features of **OptiTool** include:
 
 Would you like to contribute to the project? Visit our [**YouTube**](https://www.youtube.com/channel/UCwPlfaBfRgrAqPe8rZZmQew) channel, it’s currently inactive, but I’m working on reviving it.
 
-## 📜 License
-
-This project is licensed under the [**MIT License**](https://goo.su/Zn6m). You can consult the [**license file**](https://goo.su/6wW3oc) for more details.
-
 ## ⚠️ Developer's Note
 
 > Project: OptiTool no ha tenido un camino dificil, ni bueno, pero el creador penso
