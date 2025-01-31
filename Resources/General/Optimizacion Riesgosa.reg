@@ -1,0 +1,35 @@
+Windows Registry Editor Version 5.00
+
+; Deshabilitar informes de errores
+[-HKEY_CURRENT_USER\Software\Microsoft\Windows\Windows Error Reporting]
+
+; Deshabilitar servicios innecesarios
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\DiagTrack]
+"Start"=dword:00000004
+
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\WMPNetworkSvc]
+"Start"=dword:00000004
+
+; Aumentar el rendimiento del sistema
+[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced]
+"DisableAnimations"=dword:00000001
+
+; Eliminar el historial del Explorador de Windows
+[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced]
+"ClearRecentDocsOnExit"=dword:00000001
+
+; Limitar la cantidad de elementos en el historial
+[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced]
+"MaxRecentDocs"=dword:00000000
+
+; Deshabilitar la carga de programas innecesarios al inicio
+[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Run]
+"OneDrive"=-  ; Eliminar OneDrive del inicio
+"Skype"=-      ; Eliminar Skype del inicio
+
+; Limpiar la caché del sistema
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\LanmanServer\Parameters]
+"EnableOpLocks"=dword:00000000
+
+; Limpiar los puntos de restauración del sistema
+[-HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\SR]
