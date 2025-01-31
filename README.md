@@ -57,4 +57,5 @@ Would you like to contribute to the project? Visit our [**YouTube**](https://www
 > de la 4.0, se pensara muy bien si cancelar este proyecto.
 
 > Aparte recordemos, que solo una persona trabaja en este proyecto, Fernando.
+> PD: LA 4.0 YA SALIO WEYES!!!
 - **OptiStudio**
