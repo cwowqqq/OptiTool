@@ -1,0 +1,18 @@
+Windows Registry Editor Version 5.00
+
+; Habilitar animaciones en Windows
+[HKEY_CURRENT_USER\Control Panel\Desktop]
+"UserPreferencesMask"=hex:38,00,00,80,00,00,00,00,00,00,00,00,00,00,00,00
+"SmoothScroll"="1"
+"FontSmoothing"="2"  ; Mantener la suavización de fuentes activa
+
+[HKEY_CURRENT_USER\Control Panel\Performance\Preferences]
+"VisualStyle"="1"
+"DisableAnimations"="0"
+
+[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced]
+"TaskbarAnimations"="1"
+"ListviewAlphaSelect"="1"
+
+[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\VisualEffects]
+"VisualEffects"=dword:00000001
