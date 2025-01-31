@@ -1,0 +1,183 @@
+//Public
+Public/ApplicationName=Auto-Keyboard Cracked by OptiStudioXD
+
+//Main window
+MainWindow/Title/Untitled=Solovino
+MainWindow/Menu/File=&Archivo mierdero
+MainWindow/Menu/File/New=&Procrear
+MainWindow/Menu/File/Open=&Abrir anos...
+MainWindow/Menu/File/Save=&Guardar esta mierda...
+MainWindow/Menu/File/Start=I&niciar una vergueria...
+MainWindow/Menu/File/Exit=&Salir de este limbo...
+MainWindow/Menu/Edit=&Editar mierdas
+MainWindow/Menu/Edit/Modify=&Modificar vergas paradas...
+MainWindow/Menu/Edit/Delete=&Eliminar excremento
+MainWindow/Menu/Edit/MoveUp=Move &Up
+MainWindow/Menu/Edit/MoveDown=Move &Down
+MainWindow/Menu/Add=&Agregar vergas
+MainWindow/Menu/Add/Keystroke=&Keystroke...
+MainWindow/Menu/Add/Mouse=&Mouse...
+MainWindow/Menu/Add/Variable=&Variable...
+MainWindow/Menu/Add/Text=&Texto mierdero...
+MainWindow/Menu/Add/PixelColor=Color de &pixel...
+MainWindow/Menu/Language=&Idioma
+MainWindow/Menu/Language/EditLanguageFile=&NO HAY NADA QUE CAMBIAR AQUI, LARGATE
+MainWindow/Menu/Help=&Ayuda, soy un rehen atrapado en una computadora
+MainWindow/Menu/Help/HelpTopics=&Temas inutiles
+MainWindow/Menu/Help/About=&Acerca de esta verga...
+MainWindow/Menu/Help/BuyNow=&Comprar esta mierda, inutil por cierto...
+MainWindow/Menu/Help/Register=&Registrarse en Pornhub...
+MainWindow/ToolButton/New=Procrear
+MainWindow/ToolButton/Open=Abrir anos
+MainWindow/ToolButton/Save=Guardar esta mierda
+MainWindow/ToolButton/Keystroke=Tus pinches teclas de teclado mierderas
+MainWindow/ToolButton/Mouse=El riaton
+MainWindow/ToolButton/Variable=Variable mierdera
+MainWindow/ToolButton/Text=Texto mierdero
+MainWindow/ToolButton/Up=Arriba tus nalgas
+MainWindow/ToolButton/Down=Abajo
+MainWindow/ToolButton/Delete=Eliminar esta verga
+MainWindow/ToolButton/Start=Iniciar la procreacion...
+MainWindow/ListViewTitle/Index=Indice de vergas
+MainWindow/ListViewTitle/Name=Nombre
+MainWindow/ListViewTitle/Details=Detalles
+MainWindow/ListViewTitle/Type=CURP
+MainWindow/ListViewTitle/Delay=Delay
+MainWindow/ListViewTitle/Generate=Generar
+MainWindow/ListViewTitle/PixelColor=Color de pixel
+MainWindow/StatusBar/RepeatTimes=Repetir:
+MainWindow/Message/Msg1=El archivo de mierdas ha cambiado. Quieres borrar los cambios mierderos?
+MainWindow/Message/Msg2=Hay una nueva version de Xvideos, quieres actualizar?
+
+//Keystroke window
+KeystrokeWindow/Title/Keystroke=Tus pinches teclas de teclado mierderas
+KeystrokeWindow/Label/Keystroke=&Tecla mierdera:
+KeystrokeWindow/Label/Delay=&Retraso mental (en milisegundos):
+KeystrokeWindow/Label/Generate=&Generar mierdas:
+KeystrokeWindow/Button/Ok=&Ok puta, ya te pague
+KeystrokeWindow/Button/Cancel=&Cancelar esta verga
+
+//Mouse window
+MouseWindow/Title/Mouse=El riaton
+MouseWindow/RadioButton/ClickLeftButton=Presiona el pene izquierdo
+MouseWindow/RadioButton/ClickMiddleButton=Presiona el pene de en medio
+MouseWindow/RadioButton/ClickRightButton=Presiona el pene derecho
+MouseWindow/RadioButton/DoubleClickLeftButton=Presiona 2 veces el pene izquierdo
+MouseWindow/RadioButton/DoubleClickMiddleButton=Presiona 2 veces el pene de en medio
+MouseWindow/RadioButton/DoubleClickRightButton=Presiona 2 veces el pene derecho
+MouseWindow/Label/X-Coordinate=&Coordenada-X:
+MouseWindow/Label/Y-Coordinate=&Coordenada-Y:
+MouseWindow/Label/Delay=&Retraso mental (en milisegundos):
+MouseWindow/Label/Generate=&Generar:
+MouseWindow/Button/GetCoordinate=Conseguir coordenadas
+MouseWindow/Button/Ok=&Aceptar
+MouseWindow/Button/Cancel=&Cancelar esta mierda de Alzheimer
+
+//Variable window
+VariableWindow/Title/Variable=Variable
+VariableWindow/Label/Value=&Valor:
+VariableWindow/Label/Increment=&Incrementar:
+VariableWindow/Label/MinLength=&Longitud minima:
+VariableWindow/RadioButton/Bin=Bin
+VariableWindow/RadioButton/Oct=Oct
+VariableWindow/RadioButton/Dec=Dec
+VariableWindow/RadioButton/Hex=Hex
+VariableWindow/Label/Delay=&Delay (en milisegundos):
+VariableWindow/Label/Generate=&Generar:
+VariableWindow/Button/Ok=&Aceptar
+VariableWindow/Button/Cancel=&Cancelar
+
+//Text window
+TextWindow/Title/Text=Texto
+TextWindow/RadioButton/ViaClipboard=Generar texto mediante el portapapeles
+TextWindow/RadioButton/ViaMessage=Generar texto a traves de mensaje de caracteres
+TextWindow/RadioButton/Viakeystroke=Generate texto mediante Keystroke(neglect not keyboard character)
+VariableWindow/Label/Delay=&Delay (en milisegundos):
+VariableWindow/Label/Generate=&Generar:
+TextWindow/RadioButton/NoneState=Ningun estado
+TextWindow/RadioButton/ReadState=Leer estado
+TextWindow/RadioButton/ReplaceState=Reemplazar estado
+TextWindow/Button/Set=Set...
+TextWindow/Button/Set=Set...
+TextWindow/CheckBox/WordWrap=&Ajuste de palabras
+TextWindow/Button/Ok=&Aceptar
+TextWindow/Button/Cancel=&Cancelar
+//--
+TextWindow/ReadSet/Title/Read=Leer estado
+TextWindow/ReadSet/Label/SpaceMark=&Marca de espacio:
+TextWindow/ReadSet/Button/Add=&Agregar
+TextWindow/ReadSet/Button/Delete=&Eliminar
+TextWindow/ReadSet/Button/Clear=L&impiar
+TextWindow/ReadSet/Button/Ok=&Aceptar
+TextWindow/ReadSet/Button/Cancel=&Cancelar
+//--
+TextWindow/ReplaceSet/Title/Replace=Reemplazar estado
+TextWindow/ReplaceSet/Label/CharToFind=Caracter a &encontrar:
+TextWindow/ReplaceSet/Label/ReplaceWith=&Reemplazar con:
+TextWindow/ReplaceSet/Label/Delay=Delay (en &milisegundos):
+TextWindow/ReplaceSet/Button/Add=&Agregar
+TextWindow/ReplaceSet/Button/Delete=&Eliminar
+TextWindow/ReplaceSet/Button/Clear=L&impiar
+TextWindow/ReplaceSet/Button/Ok=&Aceptar
+TextWindow/ReplaceSet/Button/Cancel=&Cancelar
+TextWindow/ReplaceSet/ListView/CharToFind=Caracter a encontrar
+TextWindow/ReplaceSet/ListView/ReplaceWith=Reemplazar con
+TextWindow/ReplaceSet/ListView/Delay=Delay
+
+//Pixel Color window
+PixelColorWindow/Title/PixelColor=Color de pixel
+PixelColorWindow/Label/X-Coordinate=&Coordenada-X:
+PixelColorWindow/Label/Y-Coordinate=&Coordenada-Y:
+PixelColorWindow/Label/ColorType=Tipo de &color:
+PixelColorWindow/Label/ColorValue=Valor del &color:
+PixelColorWindow/ColorType/All=Todo
+PixelColorWindow/ColorType/Red=Rojo
+PixelColorWindow/ColorType/Green=Verde
+PixelColorWindow/ColorType/Blue=Azul
+PixelColorWindow/Button/GetPixelColor=&Conseguir el color del pixel
+PixelColorWindow/Button/Ok=&Aceptar
+PixelColorWindow/Button/Cancel=&Cancelar
+
+//Launch window
+LaunchWindow/Title/Launch=Iniciar
+LaunchWindow/RadioButton/UsingHotkey=Usando una &Hotkey
+LaunchWindow/RadioButton/UsingTimer=Usando un &contador
+LaunchWindow/Label/AutomaticHotkey=&Hotkey automatica:
+LaunchWindow/Label/ManualHotkey=&Hotkey manual:
+LaunchWindow/Label/Delay=&Delay(en segundos):
+LaunchWindow/Button/Start=&Iniciar
+LaunchWindow/Button/Cancel=&Cancelar
+LaunchWindow/Message/Message1=la Hotkey automatica y la Group Hotkey no pueden ser las mismas, selecciona otra Hotkey
+LaunchWindow/Message/Message2=A ocurrido un error registrando la Hotkey automatica, selecciona otra.
+LaunchWindow/Message/Message3=A ocurrido un error registrando la Group Hotkey, selecciona otra.
+
+//About window
+AboutWindow/Title/About=Acerca de esta mierda...
+AboutWindow/Label/Version=Version TESAKOTUMOKO, TEROMPO TUYEMA TESACO LAVERGA
+AboutWindow/Label/HomePage=HomePage:
+AboutWindow/Label/E-mail=Correo sin electronico:
+AboutWindow/Label/Copyright=MIT License
+AboutWindow/Label/AllRightsReserved=Cracked by OptiStudioXD
+AboutWindow/Button/Ok=&Ok, ya vete...
+
+//Registration window
+RegistrationWindow/Title/Registration=Registrarse
+RegistrationWindow/Label/UserName=&Nombre de usuario:
+RegistrationWindow/Label/RegistrationCode=C&odigo de registro:
+RegistrationWindow/Label/Price=Precio:
+RegistrationWindow/Button/Register=&Registrate en Pornhub...
+RegistrationWindow/Button/Cancel=&Cancelar
+RegistrationWindow/Button/BuyNow=&Comprar ahora
+RegistrationWindow/Hint/PasteUserName=Pegar nombre de usuario
+RegistrationWindow/Hint/PasteRegistrationCode=Pegar codigo de registro
+RegistrationWindow/Message/Msg1=Informacion incompleta o incorrecta.
+RegistrationWindow/Message/Msg2=Gracias por tu compra!
+
+//TipWindow
+TipWindow/Label/Thank=Gracias por probar Auto-Keyboard!
+TipWindow/Memo/RegInfo1=Esta es una versión no registrada completamente funcional para uso de evaluación únicamente. Tienes un periodo de prueba de 15 días. Si desea utilizar el programa después de que expire su período de prueba. Debes comprar un código de registro y registrarlo.
+TipWindow/Memo/RegInfo2=Su período de prueba ha expirado. Muchas gracias por probar Auto-Keyboard. Si desea utilizar el teclado automático. debes comprar un código de registro y registrarlo.
+TipWindow/Label/DaysLeft=Quedan {*} días en tu periodo, ya casi te sale la sangre por la verga.
+TipWindow/Button/BuyNow=&Comprar ahora
+TipWindow/Button/Register=&Registrarse
+TipWindow/Button/Evaluation=&Probarlo
