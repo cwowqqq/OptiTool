@@ -1,6 +1,8 @@
-# **Project OptiTool**
+[![Typing SVG](https://readme-typing-svg.herokuapp.com?font=Kanit&weight=800&size=50&pause=1000&color=188EF7&vCenter=true&width=435&lines=Project%3A+OptiTool)](https://git.io/typing-svg)
 
 **Project OptiTool** is a tool designed to optimize your system, with additional features such as displaying system information and uninstalling applications. This project is aimed at improving your computer's performance through cleaning and managing applications, processes, and settings.
+
+Written in [![Notepad++](https://img.shields.io/badge/Notepad++-90E59A.svg?&logo=notepad%2b%2b&logoColor=black)](#)
 
 ## 📥 Downloads
 
@@ -44,18 +46,4 @@ The features of **OptiTool** include:
 - Uninstalling applications.
 - And more...
 
-## 🤝 Contributions
-
-Would you like to contribute to the project? Visit our [**YouTube**](https://www.youtube.com/channel/UCwPlfaBfRgrAqPe8rZZmQew) channel, it’s currently inactive, but I’m working on reviving it.
-
-**No one has contributed**
-
-## ⚠️ Developer's Note
-
-> Project: OptiTool no ha tenido un camino dificil, ni bueno, pero el creador penso
-> en cancelar el Proyecto debido a escasas descargas y nulo apoyo, asi que despues
-> de la 4.0, se pensara muy bien si cancelar este proyecto.
-
-> Aparte recordemos, que solo una persona trabaja en este proyecto, Fernando.
-> PD: LA 4.0 YA SALIO WEYES!!!
-- **OptiStudio**
+[![Windows](https://custom-icon-badges.demolab.com/badge/Windows-0078D6?logo=windows11&logoColor=white)](#)
