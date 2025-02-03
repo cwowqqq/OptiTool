@@ -7,7 +7,7 @@ Written in [![Notepad++](https://img.shields.io/badge/Notepad++-90E59A.svg?&logo
 ## 📥 Downloads
 
 - [**Download Project OptiTool (zip)**](https://github.com/OptiStudioXD/OptiTool/releases/)
-- [**Download Project OptiTool Setup Installer**](https://github.com/OptiStudioXD/OptiTool/releases/download/3.9/optitool_v3.9_setup_es.exe)
+- [**Download Project OptiTool Setup Installer (Outdated)**](https://github.com/OptiStudioXD/OptiTool/releases/download/3.9/optitool_v3.9_setup_es.exe)
 - [**Linux Editions**](https://goo.su/YCrUsg)
 
 ## 🛠️ Installation
