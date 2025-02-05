@@ -3,6 +3,8 @@
 :: Coloca el color
 color 0A
 
+:: A.2 Updated via GitHub
+
 ::Coloca los entornos en el batch
 set OPTI_VER=OptiTool v4.0
 set OPTI_TEXT=OptiTool - Script de optimizacion
