@@ -46,4 +46,9 @@ The features of **OptiTool** include:
 - Uninstalling applications.
 - And more...
 
-[![Windows](https://custom-icon-badges.demolab.com/badge/Windows-0078D6?logo=windows11&logoColor=white)](#)
+## Project Idea
+
+This idea came from a tool called [OptiJuegos](https://optijuegos.github.io) called Optimizar PC. The code for the OptiTool foundations comes from this tool. Keep in mind that the newer versions of OptiTool are becoming a bit more independent. For version 5.0, we plan to have our own code.  
+But I will never forget the origin of this idea, thanks to [OptiJuegos](https://optijuegos.github.io)!
+
+[![Windows](https://custom-icon-badges.demolab.com/badge/Windows-0078D6?logo=windows11&logoColor=white)](#) [![Linux](https://img.shields.io/badge/Linux-FCC624?logo=linux&logoColor=black)](#)
