@@ -1,20 +1,25 @@
 @echo off
+
+:: Coloca el color
 color 0A
-set OPTI_VER=OptiTool v3.9
-set OPTI_TIT=OptiTool
+
+::Coloca los entornos en el batch
+set OPTI_VER=OptiTool v4.0
 set OPTI_TEXT=OptiTool - Script de optimizacion
 set WGET="%~dp0Assets\wget.exe"
 set FFPLAY="%~dp0Assets\ffplay.exe"
 
+:: Bases del codigo para solicitar admin por OptiJuegos
+
 :: Solicita permisos de administrador
-REM  --> Verificar si el script tiene permisos
-    IF "%PROCESSOR_ARCHITECTURE%" EQU "amd64" (
->nul 2>&1 "%SYSTEMROOT%\SysWOW64\cacls.exe" "%SYSTEMROOT%\SysWOW64\config\system"
+REM Verificar si el script tiene permisos de administrador
+IF "%PROCESSOR_ARCHITECTURE%" EQU "amd64" (
+    >nul 2>&1 "%SYSTEMROOT%\SysWOW64\cacls.exe" "%SYSTEMROOT%\SysWOW64\config\system"
 ) ELSE (
->nul 2>&1 "%SYSTEMROOT%\system32\cacls.exe" "%SYSTEMROOT%\system32\config\system"
+    >nul 2>&1 "%SYSTEMROOT%\system32\cacls.exe" "%SYSTEMROOT%\system32\config\system"
 )
 
-REM --> Si se establece la bandera de error, no tenemos permisos de administrador.
+REM Si no tenemos permisos de administrador, solicitar permisos
 if '%errorlevel%' NEQ '0' (
     goto UACP
 ) else (
@@ -22,40 +27,42 @@ if '%errorlevel%' NEQ '0' (
 )
 
 :UACP
+    echo Solicitud de permisos de administrador...
     echo Set UAC = CreateObject^("Shell.Application"^) > "%temp%\getadmin.vbs"
-    set params= %*
+    set params=%*
     echo UAC.ShellExecute "cmd.exe", "/c ""%~s0"" %params:"=""%", "", "runas", 1 >> "%temp%\getadmin.vbs"
 
+    REM Ejecutar el script como administrador
     "%temp%\getadmin.vbs"
     del "%temp%\getadmin.vbs"
     exit /B
 
 :AdminEnable
+    REM Establecer el directorio de trabajo correcto
     pushd "%CD%"
     CD /D "%~dp0"
-	
-:: Coloca la version como titulo
-title %OPTI_VER%
-	
-:: Verifica si existe el archivo de options, si existe, vamonos a :start, si no existe muestra el tutorial
-:verification
-if exist "%CD%\Assets\extra\options.txt" (
-    goto :start
+    
+    REM Colocar la versión como título
+    title %OPTI_VER%
+
+:Verification
+:Verification
+:: Verificar existencia de archivo de opciones
+if exist "%CD%\Assets\verif\options.txt" (
+goto :Start
 ) else (
-    goto :poststart
+goto :Tutorial
 )
 
-:: Crea la carpeta en caso de que haya un problema critico
-mkdir "Assets\critical" >nul 2>&1	
-
 	
-:poststart
+:Tutorial
+:Tutorial
 cls
 echo ==================================================
 echo              Project OptiTool
 echo ==================================================
 echo Bienvenido a %OPTI_VER%. Un script .bat para aplicar
-echo optimizaciones.
+echo optimizaciones, basicas o avanzadas.
 echo.
 echo Para moverte por el menu, debes seleccionar las Opciones
 echo utilizando los numeros, como 1, 2, 3, 4 y presionando Enter.
@@ -63,29 +70,21 @@ echo ==================================================
 pause
 
 :: Crear un archivo de opciones, para despues comprobar si no es la primera vez ejecutando el %OPTI_VER%
-type nul > "%CD%\Assets\extra\options.txt"
+type nul > "%CD%\Assets\verif\options.txt"
 
-:: Comprobando si el sistema es Windows XP o anterior
-ver | findstr /i "5\.1\." >nul
-if %errorlevel%==0 (
-    goto :old_os_warning
-) else (
-    goto :start
-)
-:old_os_warning
-echo AVISO:
-echo Tu Windows es bastante antiguo, lo que puede causar errores
-echo con las optimizaciones. Te recomendamos que si, es posible
-echo actualices a una version mas nueva de Windows
-pause
-goto start
+:: Crea la carpeta de logs, para los .log xd
+mkdir "Assets\logs" >nul 2>&1	
 
-:start
+:: Ejecutar el vbs de dudas, xd
+start "" "%~dp0Assets\msg\message1.vbs"
+
+:Start
+:Start
 :: Limpia la pantalla
 cls
 :: Muestra el titulo, usando %OPTI_VER%
 echo ==================================================
-echo %OPTI_VER%
+echo              %OPTI_VER%
 echo ==================================================
 echo.
 
@@ -95,114 +94,207 @@ echo *2 - Crear punto de restauracion (Recomendado)
 echo *3 - Opciones de Defender
 echo *4 - Opciones extremas
 echo *5 - Opciones adicionales
+echo *6 - Herramientas
 echo.
+
+:: Comprobando si el sistema es Windows XP o anterior
+ver | findstr /i "5\.1\." >nul
+if %errorlevel%==0 (
+    goto :OldOSWarning
+) else (
+    goto :ContinueStart
+)
+
+:: Aviso de Windows antiguos
+:OldOSWarning
+:OldOSWarning
 echo AVISO:
-echo Lamentamos los retrasos de la version 4.0, debido a las Fiestas de Año Nuevo,
-echo nos vemos obligados a tener que retrasar la 4.0 hasta Febrero o Marzo
+echo Tu Windows es bastante antiguo, lo que puede causar errores
+echo con las optimizaciones. Te recomendamos que si, es posible
+echo actualices a una version mas nueva de Windows
 echo.
-echo Les ofrecemos una sincera disculpa.
-echo - Att. OptiStudioXD 
+
+:ContinueStart
+:ContinueStart
 echo.
 
 :: Comandos para elegir las opciones
 set /p op=A elegir: 
-if "%op%"=="" goto :start
-if "%op%"=="1" goto :optimenu
-if "%op%"=="2" goto :respoint
-if "%op%"=="3" goto :defoptions
-if "%op%"=="4" goto :extreme
-if "%op%"=="5" goto :extra
+if "%op%"=="" goto :Start
+if "%op%"=="1" goto :OptiMenu
+if "%op%"=="2" goto :Respoint
+if "%op%"=="3" goto :DefOpt
+if "%op%"=="4" goto :Xtreme
+if "%op%"=="5" goto :Extra
+if "%op%"=="6" goto :Tools
 (
     echo Opcion no valida. Elije una opcion del menu :v
     timeout /t 2 /nobreak > nul
-    goto :start
+    goto :Start
 ) else (
-    goto :start
+    goto :Start
 )
 :: Sostiene los errores cuando insertas una opcion equivocada, evitando redirigirte a otros menus
 
 :: Menu de optimizaciones, aqui vale madres lo de comprobar si el sistema es Win XP, xd
 :: Decoracion horrible por q me crashean los ascii
-:optimenu
+
+:: Coloca el grupo y limpia la pantalla xd
+:OptiMenu
+:OptiMenu
 cls
+
+:: Coloca el titulo
 echo ==================================================
 echo             Menu de optimizaciones
 echo ==================================================
 echo.
 
+
+
+:: Insercion de opciones
 echo *1 - Optimizar PC 
-echo *2 - Optimizar RAM
-echo *3 - Eliminar Archivos Temporales
+echo *2 - Optimizar memoria RAM
+echo *3 - Eliminar archivos temporales
 echo *4 - Optimizar Internet
-echo *5 - Limpiar Cache
+echo *5 - Limpiar cache
 echo *6 - Desfragmentar disco duro (HDD)
-echo *7 - Comprobar estado del disco (Experimental)
+echo *7 - Comprobar estado del disco
 echo *8 - Gestionar programas de inicio (Experimental)
-echo *9 - Actualizar Drivers (Navegador)
-echo *10 - Regresar al menu
+echo *9 - Actualizar Drivers
+echo *10 - Repararar archivos dañados del sistema (SFC)
+echo *11 - Desactivar notificaciones de Windows
+echo *12 - Reiniciar explorador de Windows
+echo *13 - Eliminar archivos de volcado de memoria
+echo *14 - Desactivar la indexacion de archivos
+echo *15 - Reducir la cantidad de puntos de restauracion del sistema
+echo *16 - Eliminar archivos de actualizaciones fallidas
+echo *17 - Liberar espacio (cleanmgr)
+echo *18 - Desactivar sincronizacion de la cuenta de Microsoft
+echo *19 - Regresar al menu
 echo.
 echo %OPTI_TEXT%
 echo.
 
+
+:: Comandos para la insercion de opciones
 set /p op=Opcion: 
-if "%op%"=="1" goto :optimization
-if "%op%"=="2" goto :optiram
-if "%op%"=="3" goto :temporal
-if "%op%"=="4" goto :optiwifi
-if "%op%"=="5" goto :cleancache
-if "%op%"=="6" goto :defragdisk
-if "%op%"=="7" goto :checkdisk
-if "%op%"=="8" goto :managestart
-if "%op%"=="9" goto :driversupdate
-if "%op%"=="10" goto :start
-if "%op%"=="developmode" goto :confirm_develop
+if "%op%"=="1" goto :Optimization
+if "%op%"=="2" goto :OptiRAM
+if "%op%"=="3" goto :Temp
+if "%op%"=="4" goto :OptiWiFi
+if "%op%"=="5" goto :CleanCache
+if "%op%"=="6" goto :DefragDsk
+if "%op%"=="7" goto :ChkDisk
+if "%op%"=="8" goto :StartManage
+if "%op%"=="9" goto :DriversUpd
+if "%op%"=="10" goto :SFCScan
+if "%op%"=="11" goto :DisableNotifications
+if "%op%"=="12" goto :ResetExplorer
+if "%op%"=="13" goto :ResetMemoryDump
+if "%op%"=="14" goto :DisableArchiveIndex
+if "%op%"=="15" goto :ReduceRestaurationPoints
+if "%op%"=="16" goto :DeleteFailedUpdates
+if "%op%"=="17" goto :CleanMGR
+if "%op%"=="18" goto :DesMSSync
+if "%op%"=="19" goto :Start
+if "%op%"=="developmode" goto :ConfirmDev
+if "%op%"=="roblauncher" goto :RobLauncherDown
 (
-    echo Opcion no valida. Elije una opcion del menu :v
+    echo Opcion no valida. Elije una opcion del menu
     timeout /t 2 /nobreak > nul
-    goto :optimenu
+    goto :OptiMenu
 ) else (
-    goto :optimenu
+    goto :OptiMenu
 )
 
+
 :: Optimizacion general
-:optimization
+:Optimization
+:Optimization
 cls
 echo.
+
+:: Aplica optis Bcdedit
 echo Aplicando Optimizaciones Bcdedit...
 bcdedit /set useplatformtick yes >nul 2>&1
 bcdedit /set disabledynamictick yes >nul 2>&1
 echo.
+
+:: Activa el modo OptiVortex
 echo Activando OptiVortex...
 powercfg -h off >nul 2>&1
-powercfg -import "%~dp0Recursos\Plan de Energia CPU\OptiVortex.pow" a11a11c9-6d83-493e-a38d-d5fa3c620915 >nul 2>&1
+powercfg -import "%~dp0Resources\Plan de Energia CPU\OptiVortex.pow" a11a11c9-6d83-493e-a38d-d5fa3c620915 >nul 2>&1
 powercfg /setactive a11a11c9-6d83-493e-a38d-d5fa3c620915 >nul 2>&1
 echo.
 echo Borrando Archivos Temporales...
 
-start "" "%~dp0Assets\batchutilities\FastTempDel.bat"
+start "" "%~dp0Assets\utilities\FastTempDel.bat"
 
 timeout /t 2 /nobreak >nul
 echo.
 echo Aplicando Optimizaciones de Regedit
-regedit /S "Recursos\Servicios\Optimizar Servicios.reg"
-regedit /S "Recursos\Prioridad CPU\Prioridad Juegos.reg"
-regedit /S "Recursos\General\Mejorar La Velocidad del Menu.reg"
-regedit /S "Recursos\Mitigar CPU\Deshabilitar Mitigaciones.reg"
-regedit /S "Recursos\Telemetria\Deshabilitar Telemetria.reg"
-regedit /S "Graficos\Optimizar INTEL.reg"
-regedit /S "Apariencia\Deshabilitar Animaciones.reg"
-regedit /S "Apariencia\Deshabilitar Cortana.reg"
-regedit /S "Graficos\Optimizar NVIDIA.reg"
-regedit /S "Graficos\Prioridad A Graficos.reg"
+regedit /S "Resources\Servicios\Optimizar Servicios.reg"
+regedit /S "Resources\Prioridad CPU\Prioridad Juegos.reg"
+regedit /S "Resources\General\Mejorar La Velocidad del Menu.reg"
+regedit /S "Resources\Mitigar CPU\Deshabilitar Mitigaciones.reg"
+regedit /S "Resources\Telemetria\Deshabilitar Telemetria.reg"
+regedit /S "Graphics\Optimizar INTEL.reg"
+regedit /S "Appearance\Deshabilitar Animaciones.reg"
+regedit /S "Appearance\Deshabilitar Cortana.reg"
+regedit /S "Graphics\Optimizar NVIDIA.reg"
+regedit /S "Graphics\Prioridad A Graficos.reg"
 regedit /S "RAM\Optimizar RAM.reg"
 timeout /t 3 /nobreak
 echo Optimizacion realizada con exito
 echo.
-echo %OPTI_TEXT%
 pause
-goto :done
+goto Done
 
-:managestart
+:DesMSSync
+:DesMSSync
+cls
+:: Menu principal
+:: Ejecuta la herramienta para eliminar archivos temporales
+echo ==================================================
+echo           Desactivar sincronizacion
+echo ==================================================
+echo.
+echo Iniciando herramienta...
+timeout /t 1 /nobreak >nul
+
+:: Comando para iniciar el programa
+start "" "%~dp0Assets\utilities\desmsync.bat"
+
+pause
+goto :Start
+
+:CleanMGR
+:CleanMGR
+cls
+echo ==================================================
+echo           Borrar archivos temporales
+echo ==================================================
+echo.
+echo Iniciando la herramienta de limpieza de disco...
+timeout /t 1 /nobreak >nul
+
+:: Comando para iniciar el programa
+start "" "%~dp0Assets\utilities\cleanmgr.bat"
+
+pause
+goto Start
+
+:SFCScan
+:SFCScan
+cls
+echo Comprobando y reparando archivos del sistema...
+sfc /scannow
+pause
+goto DoneSFC
+
+:StartManage
+:StartManage
 :: Mostrar programas de inicio
 echo Programas de inicio actuales:
 echo ==================================================
@@ -230,10 +322,11 @@ if /i "%program%"=="todos" (
 echo.
 echo Se recomienda reiniciar el sistema para aplicar los cambios
 pause
-goto :start
+goto :Start
 
 :: Revision del disco duro
-:checkdisk
+:ChkDisk
+:ChkDisk
 cls
 setlocal enabledelayedexpansion
 
@@ -268,14 +361,22 @@ if %errorlevel%==0 (
 echo.
 echo Verificacion completada. Presione espacio para regresar al menu
 pause >nul
-goto :start
+goto :Start
 
 
 
 :: Desfragmentacion del disco duro
-:defragdisk
+
+:: Coloca el grupo y limpia la pantalla
+:DefragDsk
+:DefragDsk
+
+:: setlocal
 setlocal
 cls
+
+
+:: Advertencia a los SSDs
 echo *******************************************
 echo   ¡ADVERTENCIA! SOLO RECOMENDABLE EN UNIDADES HDD
 echo   YA QUE EN LOS SSD ACORTA SU VIDA UTIL.
@@ -300,10 +401,11 @@ if "%drive%"=="" (
 
 :: Verifica si la unidad seleccionada existe, si existe continua, si no existe, reinicia el proceso
 echo *** Verificando existencia de la unidad %drive%...
-if not exist %drive%: (
+if not exist "%drive%:" (
     echo La unidad %drive% no es valida o no existe. Por favor, ingresa una unidad correcta.
     goto iniciarIngresoUnidad
 )
+
 
 :: Pregunta al usuario si desea continuar con la desfragmentacion
 set /p confirm="¿Deseas desfragmentar la unidad %drive%? (S/N): "
@@ -317,55 +419,133 @@ echo *** Desfragmentando la unidad %drive%... Esto puede tardar un tiempo ***
 defrag %drive%: /O /H
 
 :: Verifica si la desfragmentacion fue realizada con exito, si no lo fue, muestra un mensaje de error
-if %errorlevel%==0 (
-    echo *** Desfragmentacion completada exitosamente. ***
-) else (
+if %errorlevel% neq 0 (
     echo *** Ocurrio un error durante la desfragmentacion. ***
+) else (
+    echo *** Desfragmentacion completada exitosamente. ***
 )
+
 
 :: Termina el proceso
 :finalizarProceso
 pause
-goto done_defrag
+goto :DefragDone
 
-:driversupdate
+:: Actualizacion de Drivers
+
+:: Coloca el grupo y limpia la pantalla
+:DriversUpd
+:DriversUpd
 cls
-echo.
 echo ==================================================
-echo          Actualizar controladores
+echo   Elige el metodo para actualizar los drivers
+echo ==================================================
+echo.
+echo 1. Actualizar mediante Web
+echo 2. Actualizar mediante Driver Booster
+echo 3. Regresar al menu
+echo.
+
+set /p option="Opcion: "
+
+if "%option%"=="1" goto :DriversUpdWeb
+if "%option%"=="2" goto :DriverBooster
+if "%option%"=="3" goto :Start
+) else (
+    echo Opcion no valida. Selecciona una del menu
+)
+
+:DriversUpdWeb
+:DriversUpdWeb
+:: Menu de opciones
+cls
+echo ==================================================
+echo        Actualizar controladores (Web)
 echo ==================================================
 echo.
 echo 1. Actualizar controladores de AMD
 echo 2. Actualizar controladores de Intel
 echo 3. Actualizar controladores de NVIDIA
-echo 4. Regresar al menu
+echo 4. Actualizar controladores de HP
+echo 5. Actualizar controladores de TOSHIBA (impresoras/fax)
+echo 6. Actualizar controladores de Lenovo
+echo 7. Actualizar controladores de Asus
+echo 8. Actualizar controladores de Acer
+echo 9. Regresar al menu
 echo.
 
+:: Insercion de opciones
 set /p option="Opcion: "
 
 if "%option%"=="1" (
     echo Abriendo pagina de AMD...
     start https://goo.su/eU5BaaT
 	timeout /t 2 /nobreak >nul
-	goto :start
+	goto :Start
 ) else if "%option%"=="2" (
     echo Abriendo pagina de Intel...
     start https://goo.su/Wdo3
 	timeout /t 2 /nobreak >nul
-	goto :start
+	goto :Start
 ) else if "%option%"=="3" (
     echo Abriendo pagina de NVIDIA...
     start https://goo.su/z1V5vv
 	timeout /t 2 /nobreak >nul
-	goto :start
+	goto :Start
 ) else if "%option%"=="4" (
-    goto :extra
+    echo Abriendo pagina de HP...
+    start https://support.hp.com/us-en/drivers
+	timeout /t 2 /nobreak >nul
+	goto :Start
+) else if "%option%"=="5" (
+    echo Abriendo pagina de TOSHIBA...
+    start https://business.toshiba.com/support-drivers
+	timeout /t 2 /nobreak >nul
+	goto :Start
+) else if "%option%"=="6" (
+    echo Abriendo pagina de Lenovo...
+    start https://support.lenovo.com/us/en
+	timeout /t 2 /nobreak >nul
+	goto :Start
+) else if "%option%"=="7" (
+    echo Abriendo pagina de Asus...
+    start https://www.asus.com/support/download-center/
+	timeout /t 2 /nobreak >nul
+	goto :Start
+) else if "%option%"=="8" (
+    echo Abriendo pagina de Acer...
+    start https://www.acer.com/ae-en/predator/support/drivers-manuals/drivers-and-manuals
+	timeout /t 2 /nobreak >nul
+	goto :Start
+) else if "%option%"=="9" (
+	goto :Start
 ) else (
     echo Opcion no valida. Selecciona una del menu :v
 )
 
-:temporal
+:DriverBooster
+:DriverBooster
+echo ==================================================
+echo                Driver Booster
+echo ==================================================
+echo.
+echo Iniciando herramienta...
+timeout /t 1 /nobreak >nul
+
+:: Comando para iniciar el programa
+start "" "%~dp0Assets\utilities\driver-booster\DriverBoosterPortable.exe"
+
+pause
+goto :Start
+
+:: Elimina archivos Temporales
+
+:: Coloca el grupo y limpia la pantalla
+:Temp
+:Temp
 cls
+:: Menu principal
+:: Ejecuta la herramienta para eliminar archivos temporales
 echo ==================================================
 echo           Borrar archivos temporales
 echo ==================================================
@@ -373,16 +553,21 @@ echo.
 echo Iniciando herramienta...
 timeout /t 1 /nobreak >nul
 
-start "" "%~dp0Assets\batchutilities\FastTempDel.bat"
+:: Comando para iniciar el programa
+start "" "%~dp0Assets\utilities\FastTempDel.bat"
 
 pause
-goto start
+goto :Start
 
-:optiwifi
+:: Coloca el grupo y limpia la pantalla
+:OptiWiFi
+:OptiWiFi
 cls
+
 echo Limpiando la cache DNS...
 ipconfig /flushdns >nul 2>&1
 
+:: Aplica la DNS de Cloudfare (con ayuda de ChatGPT, BlackBoxAI y mi IA de Python)
 echo Aplicando DNS de Cloudfare...
 FOR /F "tokens=* delims=:" %%a IN ('IPCONFIG ^| FIND /I "ETHERNET ADAPTER"') DO (
 SET adapterName=%%a >nul 2>&1
@@ -404,40 +589,37 @@ reg add "HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\Tcpip\Parameters" 
 reg add "HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\Tcpip\Parameters" /v DefaultTTL /t REG_DWORD /d 32 /f >nul 2>&1
 reg add "HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\Tcpip\Parameters" /v TCP1323opts /t REG_DWORD /d 1 /f >nul 2>&1
 timeout /t 3 /nobreak >nul
-goto done
+goto :Done
 
-:optiram
+:: Coloca el grupo y limpia la pantalla
+:OptiRAM
+:OptiRAM
 cls
-echo.
-echo Aplicando Optimizaciones Bcdedit...
-bcdedit /set useplatformtick yes >nul 2>&1
-bcdedit /set disabledynamictick yes >nul 2>&1
-echo.
-echo Activando OptiVortex...
-powercfg -h off >nul 2>&1
-powercfg -import "%~dp0Recursos\Plan de Energia CPU\OptiVortex.pow" a11a11c9-6d83-493e-a38d-d5fa3c620915 >nul 2>&1
-powercfg /setactive a11a11c9-6d83-493e-a38d-d5fa3c620915 >nul 2>&1
-echo.
+
+:: Esta optimizacion solo optimiza la ram y aplica un par de optimizaciones
 echo Aplicando Optimizacion Regedit...
-regedit /S "Recursos\Servicios\Optimizar Servicios.reg"
-regedit /S "Recursos\Prioridad CPU\Prioridad Juegos.reg"
-regedit /S "Recursos\Mitigar CPU\Deshabilitar Mitigaciones.reg"
-regedit /S "Recursos\Telemetria\Deshabilitar Telemetria.reg"
-regedit /S "Graficos\Optimizar INTEL.reg"
-regedit /S "Apariencia\Deshabilitar Animaciones.reg"
-regedit /S "Apariencia\Deshabilitar Cortana.reg"
-regedit /S "Graficos\Optimizar NVIDIA.reg"
-regedit /S "Graficos\Prioridad A Graficos.reg"
+regedit /S "Resources\Servicios\Optimizar Servicios.reg"
+regedit /S "Resources\Telemetria\Deshabilitar Telemetria.reg"
+regedit /S "Graphics\Optimizar INTEL.reg"
+regedit /S "Graphics\Optimizar NVIDIA.reg"
+regedit /S "Graphics\Prioridad A Graficos.reg"
 regedit /S "RAM\Optimizar RAM.reg"
 echo.
+
+:: Instala Mem Reduct
 echo Instalando MemReduct x86...
-xcopy "Recursos\Reducir RAM" "%SystemDrive%\Program Files (x86)" /S /Y
+xcopy "Resources\Reducir RAM" "%SystemDrive%\Program Files (x86)" /S /Y
 start /min "" "%SystemDrive%\Program Files (x86)\Mem Reduct\memreduct.exe"
 timeout /t 3 /nobreak
-goto :doneram
+goto :DoneRAM
 
-:cleancache
+
+:: Coloca el grupo y limpia la pantalla
+:CleanCache
+:CleanCache
 cls
+
+:: muestra el mensaje
 echo Eliminando archivos de cache...
 
 :: Limpiar archivos temporales
@@ -489,85 +671,173 @@ if %errorlevel% neq 0 (
 
 echo Limpieza de cache completada.
 pause
-goto :start
+goto :Start
 
-:chavodel8_acapulco
-%FFPLAY% -hide_banner -window_title "Reproductor" -fflags nobuffer -flags low_delay -sn -ac 2 -fast "https://archive.org/download/elchavo_201709/El Chavo del 8 - Vacaciones en Acapulco.mp4"
-pause
-goto :start
-
-:uninstalltool
+:: Coloca el grupo y limpia la pantalla
+:UninsTool
+:UninsTool
 cls
+
+:: Muestra el titulo
 echo ==================================================
 echo           Desinstalacion de programas
 echo ==================================================
 echo.
+:: Insercion de opciones
 echo 1. Ejecutar Uninstall Tool
 echo 2. Regresar al menu
 echo.
+
+:: Comando para insercion de opciones
 set /p option=Opcion: 
 
 if "%option%"=="1" (
-    start "" "%~dp0Assets\batchutilities\desinstalar-tool\UninstallToolPortable.exe"
+    echo Iniciando cliente...
+	timeout /t 2 /nobreak >nul
+    start "" "%~dp0Assets\utilities\desinstalar-tool\UninstallToolPortable.exe"
+	goto :Start
 ) else if "%option%"=="2" (
-    goto start
+    goto :Start
 ) else (
     echo Opcion no valida. Intente nuevamente.
-    goto uninstalltool
+    goto :UninsTool
 )
 
-goto start
+goto :Start
 
-
-:roblaunchdownload
+:: Easteregg, descarga Roblauncher, de OptiJuegos
+:RobLauncherDown
+:RobLauncherDown
 cls
 set /p option="Sure (Y/N)? "
 
-if /I "%option%"=="Y" goto roblaunchdownload_2
-if /I "%option%"=="y" goto roblaunchdownload_2
-if /I "%option%"=="yes" goto roblaunchdownload_2
-if /I "%option%"=="YES" goto roblaunchdownload_2 
-if /I "%option%"=="N" goto start
-if /I "%option%"=="n" goto start
-if /I "%option%"=="no" goto start
-if /I "%option%"=="NO" goto start
+if /I "%option%"=="Y" goto RobLaunchDown2
+if /I "%option%"=="YES" goto RobLaunchDown2
+if /I "%option%"=="N" goto Start
+if /I "%option%"=="NO" goto Start
 
 echo Invalid option. Exiting.
-goto start
+goto :Start
 
-:roblaunchdownload_2
+:RobLaunchDown2
+:RobLaunchDown2
 cls
 
 start "" "%~dp0Assets\roblaunch\roblauncher-downloader.bat"
 
 pause
-goto start
+goto :Start
 
-:extreme
+:: Coloca el grupo y limpia la pantalla
+:Xtreme
+:Xtreme
 cls
+
+:: Optimizaciones extremas
 echo ==================================================
 echo        Opciones de optimizacion extremas
 echo ==================================================
 echo.
 echo 1* - Litear Windows
 echo 2* - Optimizacion extrema
-echo 3* - Regresar al menu
+echo 3* - Limpiar el registro de Windows
+echo 4* - Regresar al menu
 echo.
 
+:: Insercion de opciones
 set /p op=Opcion: 
-if "%op%"=="1" goto :confirm_lite
-if "%op%"=="2" goto :confirm_extremeopti
-if "%op%"=="3" goto :start
+if "%op%"=="1" goto :ConfirmLite
+if "%op%"=="2" goto :ConfirmXtremeopti
+if "%op%"=="3" goto :RegDel
+if "%op%"=="4" goto :Start
 (
     echo Opcion no valida. Elije una opcion del menu :v
     timeout /t 2 /nobreak > nul
-    goto :extreme
+    goto :Xtreme
 ) else (
-    goto :extreme
+    goto :Xtreme
 )
 
+:RegDel
+:RegDel
+cls
+echo ==================================================
+echo       Limpiar completamente el registro
+echo ==================================================
+echo AVISO: Siempre ten cuidado al manipular el registro
+echo ya que cambios erroneos pueden afectar el rendimiento o la estabilidad del sistema
+echo.
+timeout /t 2 /nobreak >nul
+echo Presiona espacio para continuar...
+pause >nul
+echo Limpiando el registro de Windows...
+
+:: Hacer una copia de seguridad del registro antes de modificarlo
+echo Realizando copia de seguridad del registro...
+reg export HKCU\Software\Microsoft\Windows\CurrentVersion\Explorer\RunMRU "%USERPROFILE%\Desktop\RunMRU_Backup.reg" /y
+reg export "HKCU\Software\Microsoft\Internet Explorer" "%USERPROFILE%\Desktop\InternetExplorer_Backup.reg" /y
+reg export "HKCU\Software\Microsoft\Windows\CurrentVersion\Explorer\Shell Folders" "%USERPROFILE%\Desktop\ShellFolders_Backup.reg" /y
+
+:: Eliminar historial de ejecucion (MRU)
+echo Eliminando historial de ejecuciones recientes...
+reg delete HKCU\Software\Microsoft\Windows\CurrentVersion\Explorer\RunMRU /f
+
+:: Eliminar entradas de URLs de Internet Explorer
+echo Eliminando entradas de URLs de Internet Explorer...
+reg delete "HKCU\Software\Microsoft\Internet Explorer\TypedURLs" /f
+
+:: Eliminar claves de ejecucion de bajo registro de Internet Explorer
+echo Eliminando claves de ejecucion de bajo registro...
+reg delete "HKCU\Software\Microsoft\Internet Explorer\LowRegistry\Run" /f
+
+:: Eliminar claves relacionadas con la papelera de reciclaje
+echo Eliminando claves de la papelera de reciclaje...
+reg delete "HKCU\Software\Microsoft\Windows\CurrentVersion\Explorer\Shell Folders" /f
+
+:: Eliminar claves de programas desinstalados
+echo Eliminando claves de programas no utilizados...
+reg delete "HKCU\Software\Microsoft\Windows\CurrentVersion\Uninstall" /f
+
+:: Limpiar claves de aplicaciones recientes
+echo Eliminando claves de aplicaciones recientes...
+reg delete "HKCU\Software\Microsoft\Windows\CurrentVersion\Explorer\RecentDocs" /f
+
+:: Limpiar claves de historial de busqueda
+echo Eliminando historial de busqueda...
+reg delete "HKCU\Software\Microsoft\Search\RecentQueries" /f
+
+:: Limpiar entradas de fuentes de pantalla recientes
+echo Eliminando fuentes de pantalla recientes...
+reg delete "HKCU\Software\Microsoft\Windows\CurrentVersion\Explorer\RecentDocs" /f
+
+:: Limpiar entradas de preferencias del sistema
+echo Limpiando preferencias del sistema...
+reg delete "HKCU\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced" /f
+
+:: Limpiar claves de Windows Update
+echo Limpiando claves de Windows Update...
+reg delete "HKCU\Software\Microsoft\Windows\CurrentVersion\WindowsUpdate" /f
+
+:: Limpiar claves de la barra de tareas
+echo Limpiando configuraciones de la barra de tareas...
+reg delete "HKCU\Software\Microsoft\Windows\CurrentVersion\Explorer\Taskband" /f
+
+:: Limpiar el historial de busqueda del explorador
+echo Limpiando historial de busqueda del explorador...
+reg delete "HKCU\Software\Microsoft\Windows\CurrentVersion\Explorer\SearchHistory" /f
+
+:: Limpiar el historial de la ventana de ejecutar
+echo Limpiando historial de la ventana de ejecutar...
+reg delete "HKCU\Software\Microsoft\Windows\CurrentVersion\Explorer\RunMRU" /f
+
+echo Registro limpiado correctamente.
+pause
+goto :DoneRegDel
+
 :: Crea un punto de restauracion para restablecer cambios en caso de que las optimizaciones no sean de agrado
-:respoint
+
+:Respoint
+:Respoint
 cls
 echo ==================================================
 echo            Punto de restauracion
@@ -594,24 +864,25 @@ if %errorlevel%==0 (
 
 :: Esperar y finalizar
 pause
-goto :start
+goto :Start
 
-:extremeopti
+:: Optimizacion extrema
+:XtremeOpti
+:XtremeOpti
 cls
-echo Esto esta en modo beta. Si quieres continuar continua...
+echo Esta seccion esta en mantenimiento panas
+echo esperense para la Rev B.
+echo.
 pause
-:: Se ejecutan los bloques
-call :opti
-call :optiram
-call :lite_cus
-call :defoff
-call :cleancache
-call :optiwifi
 timeout /t 3 /nobreak >nul
-goto :done_extreme
+goto :Start
 
-:defoptions
+:: Coloca el grupo y limpia la pantalla
+:DefOpt
+:DefOpt
 cls
+
+:: Opciones de Defender
 echo ==================================================
 echo             Opciones de Defender
 echo ==================================================
@@ -624,83 +895,107 @@ echo *5 - Ver estado de Windows Defender
 echo *6 - Ver historial de Proteccion
 echo *7 - Regresar al menu
 echo.
-set /p defop=Opción: 
-if "%defop%"=="1" goto :defoff
-if "%defop%"=="2" goto :defon
-if "%defop%"=="3" goto :defreset
-if "%defop%"=="4" goto :mpsignature
-if "%defop%"=="5" goto :defstatus
-if "%defop%"=="6" goto :defhistory
-if "%defop%"=="7" goto :start
-if "%defop%"=="developmode" goto :confirm_develop
-goto :start
 
-:confirm_extremeopti2
+:: Generar un número aleatorio entre 0 y 1
+set /a randomNum=%random% %% 2
+
+:: Si es 0, mostrar el primer anuncio
+if %randomNum%==0 (
+    echo ======================================
+	echo Suscribete al canal oficial de OptiTool
+	echo en este enlace:
+	echo https://www.youtube.com/@optistudio
+	echo ======================================
+) else (
+    rem Si es 1, mostrar el segundo anuncio
+    echo ======================================
+    echo Gustas valorar este script en GitHub y
+    echo apoyar el proyecto? Nuestro Github es:
+    echo https://github.com/OptiStudioXD/OptiTool
+    echo ======================================
+)
+
+echo.
+
+set /p defop=Opcion: 
+if "%defop%"=="1" goto :DefOff
+if "%defop%"=="2" goto :DefOn
+if "%defop%"=="3" goto :DefReset
+if "%defop%"=="4" goto :MPSign
+if "%defop%"=="5" goto :DefStatus
+if "%defop%"=="6" goto :DefHistory
+if "%defop%"=="7" goto :Start
+if "%defop%"=="developmode" goto :ConfirmDev
+goto :Start
+
+:ConfirmXtremeOpti2
+:ConfirmXtremeOpti2
 cls
 echo This can damage your Windows! Esto puede dañar tu Windows!
 set /p option="SURE?! (Y/N)? "
 
-if /I "%option%"=="Y" goto extremeopti
-if /I "%option%"=="y" goto extremeopti
-if /I "%option%"=="yes" goto extremeopti
-if /I "%option%"=="YES" goto extremeopti
-if /I "%option%"=="N" goto extreme
-if /I "%option%"=="n" goto extreme
-if /I "%option%"=="no" goto extreme
-if /I "%option%"=="NO" goto extreme
+if /I "%option%"=="Y" goto XtremeOpti
+if /I "%option%"=="YES" goto XtremeOpti
+if /I "%option%"=="N" goto Xtreme
+if /I "%option%"=="NO" goto Xtreme
 
-:defreset
+:DefReset
+:DefReset
 cls
 echo Reiniciando Windows Defender...
 powershell -Command "Stop-Service -Name WinDefend -Force; Start-Service -Name WinDefend"
 if %errorlevel% neq 0 (
     echo Hubo un error al reiniciar Windows Defender.
     pause
-    goto start
+    goto :Start
 )
 echo Windows Defender ha sido reiniciado correctamente.
 pause
-goto start
+goto :Start
 
-:defstatus
+:DefStatus
+:DefStatus
 cls
 echo Consultando el estado de Windows Defender...
 powershell -Command "Get-MpComputerStatus"
 if %errorlevel% neq 0 (
     echo Hubo un error al consultar el estado de Windows Defender.
     pause
-    goto start
+    goto :Start
 )
 pause
-goto start
+goto :Start
 
-:mpsignature
+:MPSign
+:MPSign
 cls
 echo Actualizando las definiciones de virus de Windows Defender...
 powershell -Command "Update-MpSignature"
 if %errorlevel% neq 0 (
     echo Hubo un error al actualizar las definiciones de Windows Defender.
     pause
-    goto start
+    goto :Start
 )
 echo Definiciones de Windows Defender actualizadas correctamente.
 pause
-goto start
+goto :Start
 
-:defhistory
+:DefHistory
+:DefHistory
 cls
 echo Abriendo el historial de proteccion de Windows Defender...
 powershell -Command "Get-WinEvent -LogName 'Microsoft-Windows-Windows Defender/Operational' | Select-Object -First 10"
 if %errorlevel% neq 0 (
     echo Hubo un error al obtener el historial de proteccion de Windows Defender.
     pause
-    goto start
+    goto :Start
 )
 pause
-goto start
+goto :Start
 
 
-:defoff
+:DefOff
+:DefOff
 cls
 echo ==================================================
 echo             Desactivar Defender
@@ -725,9 +1020,10 @@ reg add "HKEY_CURRENT_USER\Software\Policies\Microsoft\Windows\CurrentVersion\Pu
 reg add "HKEY_CURRENT_USER\Software\Policies\Microsoft\Windows\CurrentVersion\PushNotifications" /v "NoToastApplicationNotificationOnLockScreen" /t REG_DWORD /d 1 /f
 echo Windows Defender fue deshabilitado correctamente.
 timeout /t 3 /nobreak
-goto :start
+goto :Start
 
-:defon
+:DefOn
+:DefOn
 cls
 echo ==================================================
 echo            Activar Defender
@@ -752,9 +1048,199 @@ reg add "HKEY_CURRENT_USER\Software\Policies\Microsoft\Windows\CurrentVersion\Pu
 reg add "HKEY_CURRENT_USER\Software\Policies\Microsoft\Windows\CurrentVersion\PushNotifications" /v "NoToastApplicationNotificationOnLockScreen" /t REG_DWORD /d 0 /f
 echo Windows Defender fue activado correctamente
 timeout /t 3 /nobreak
-goto :start
+goto :Start
 
-:extra
+:ReduceRestaurationPoints
+:ReduceRestaurationPoints
+cls
+echo Reduciendo la cantidad de puntos de restauracion del sistema...
+pause
+
+:: Establecer el tamano maximo para los puntos de restauracion (en GB)
+:: El valor predeterminado es 5GB, puedes ajustarlo segun sea necesario (por ejemplo, 2GB para menos espacio)
+set pointsize=2
+
+:: Usar vssadmin para configurar el tamano maximo para los puntos de restauracion
+echo Configurando el tamano de los puntos de restauracion a %pointsize%GB...
+vssadmin Resize ShadowStorage /For=C: /On=C: /MaxSize=%pointsize%GB
+
+:: Verificar si el comando fue exitoso
+if %errorlevel%==0 (
+    echo Tamano de los puntos de restauracion reducido a %pointsize%GB.
+) else (
+    echo Hubo un error al intentar reducir el tamano de los puntos de restauracion.
+)
+
+pause
+goto :Start
+
+
+:DisableArchiveIndex
+:DisableArchiveIndex
+cls
+echo Deshabilitando la indexacion de archivos...
+pause
+
+:: Detener el servicio de busqueda de Windows (Windows Search)
+net stop "Windows Search"
+
+:: Deshabilitar el servicio para que no se inicie con Windows
+sc config "WSearch" start= disabled
+
+echo Indexacion de archivos deshabilitada correctamente.
+pause
+goto :Start
+
+:ResetMemoryDump
+:ResetMemoryDump
+cls
+echo Eliminando archivos de volcado de memoria...
+pause
+
+:: Eliminar el archivo de volcado de memoria principal
+if exist C:\Memory.dmp (
+    echo Eliminar archivo Memory.dmp...
+    del /f /q C:\Memory.dmp
+) else (
+    echo No se encontro el archivo Memory.dmp en C:.
+)
+
+:: Verificar si existen archivos de volcado en la carpeta Minidump (en caso de que existan)
+if exist C:\Windows\Minidump\* (
+    echo Limpiando archivos de volcado en C:\Windows\Minidump...
+    del /f /q C:\Windows\Minidump\*
+) else (
+    echo No se encontraron archivos de volcado en C:\Windows\Minidump.
+)
+
+echo Archivos de volcado de memoria eliminados correctamente (si existian).
+pause
+goto :Start
+
+:DeleteFailedUpdates
+:DeleteFailedUpdates
+cls
+echo AVISO: Este codigo posee errores, pruebalo bajo tu propio riesgo.
+echo.
+echo Eliminar archivos de actualizaciones fallidas de Windows...
+pause
+
+:: Detener el servicio de Windows Update
+net stop wuauserv
+net stop wuaserv
+
+:: Eliminar el contenido de las carpetas de actualización
+del /f /s /q C:\Windows\SoftwareDistribution\Download\*
+del /f /s /q C:\Windows\SoftwareDistribution\DataStore\*
+
+:: Reiniciar el servicio de Windows Update
+net start wuauserv
+
+echo Archivos de actualizaciones fallidas eliminados correctamente.
+pause
+goto :Start
+
+
+:ResetExplorer
+:ResetExplorer
+cls
+echo Reiniciando Windows Explorer...
+pause
+
+:: Detener el proceso de Windows Explorer
+taskkill /f /im explorer.exe
+
+:: Esperar un momento antes de reiniciar
+timeout /t 3 /nobreak >nul
+
+:: Reiniciar Windows Explorer
+start explorer.exe
+
+echo Windows Explorer reiniciado correctamente.
+pause
+goto :Start
+
+:Tools
+:Tools
+cls
+echo ==================================================
+echo               Herramientas
+echo ==================================================
+echo.
+echo *1 - Actualizar OptiTool
+echo *2 - Auto-Keyboard
+echo *3 - Auto-Clicker
+echo *4 - Herramienta para desinstalar programas
+echo *5 - Driver Booster
+echo *6 - Regresar al menu
+echo.
+
+:GenerateAds3
+:GenerateAds3
+:: Generar un número aleatorio entre 0 y 1
+set /a randomNum=%random% %% 2
+
+:: Si es 0, mostrar el primer anuncio
+if %randomNum%==0 (
+    echo ======================================
+	echo Recuerda actualizar OptiTool, lo puedes
+	echo hacer desde el apartado de Herramientas.
+	echo ======================================
+) else (
+    rem Si es 1, mostrar el segundo anuncio
+    echo ======================================
+    echo Sabias que todas las herramientas usadas
+	echo aqui, tuvieron un intento de crackeo de 
+	echo parte de OptiStudio, pero algunos fracasaron
+    echo ======================================
+)
+
+echo.
+
+
+
+set /p toolop=Opcion: 
+if "%toolop%"=="1" goto :UpdOptiTool
+if "%toolop%"=="2" goto :AutoKeyboard
+if "%toolop%"=="3" goto :AutoClicker
+if "%toolop%"=="4" goto :UninsTool
+if "%toolop%"=="5" goto :DriverBooster
+if "%toolop%"=="6" goto :Start
+if "%toolop%"=="roblaunch" goto RobLauncherDown
+if "%toolop%"=="developmode" goto :ConfirmDev
+
+:AutoClicker
+:AutoClicker
+cls
+echo ==================================================
+echo                Auto Clicker
+echo ==================================================
+echo.
+:: Insercion de opciones
+echo 1. Ejecutar Auto-Clicker
+echo 2. Regresar al menu
+echo.
+
+:: Comando para insercion de opciones
+set /p option=Opcion: 
+
+if "%option%"=="1" (
+    echo Iniciando cliente...
+	timeout /t 2 /nobreak >nul
+    start "" "%~dp0Assets\utilities\auto-clicker\AutoClicker.exe"
+	goto :Start
+) else if "%option%"=="2" (
+    goto Start
+) else (
+    echo Opcion no valida. Intente nuevamente.
+    goto AutoClicker
+)
+
+goto Start
+
+:Extra
+:Extra
+:: Opciones adicionales
 cls
 echo ==================================================
 echo             Opciones adicionales
@@ -762,85 +1248,120 @@ echo ==================================================
 echo.
 echo *1 - Informacion del sistema
 echo *2 - Creditos
-echo *3 - Herramienta para desinstalar programas
-echo *4 - Actualizar OptiTool
-echo *5 - Reparar archivos danados del sistema (SFC)
-echo *6 - Desactivar notificaciones
-echo *7 - Regresar al menu
+echo *3 - Regresar al menu
 echo.
+
+:GenerateAds2
+:GenerateAds2
+:: Generar un número aleatorio entre 0 y 1
+set /a randomNum=%random% %% 2
+
+:: Si es 0, mostrar el primer anuncio
+if %randomNum%==0 (
+    echo ======================================
+	echo Recuerda actualizar OptiTool, lo puedes
+	echo hacer desde el apartado de Herramientas.
+	echo ======================================
+) else (
+    rem Si es 1, mostrar el segundo anuncio
+    echo ======================================
+    echo Gustas valorar este script en GitHub y
+    echo apoyar el proyecto? Nuestro Github es:
+    echo https://github.com/OptiStudioXD/OptiTool
+    echo ======================================
+)
+
+echo.
+
 set /p extraop=Opcion: 
-if "%extraop%"=="1" goto :sysinf
-if "%extraop%"=="2" goto :credits
-if "%extraop%"=="3" goto :uninstalltool
-if "%extraop%"=="4" goto :updateclient
-if "%extraop%"=="5" goto :sfc_scan
-if "%extraop%"=="6" goto :disablenotis
-if "%extraop%"=="7" goto :start
-if "%extraop%"=="roblaunch" goto roblaunchdownload
-if "%extraop%"=="developmode" goto :confirm_develop
+if "%extraop%"=="1" goto :Sysinfo
+if "%extraop%"=="2" goto :Creds
+if "%extraop%"=="3" goto :Start
+if "%extraop%"=="roblaunch" goto RobLauncherDown
+if "%extraop%"=="developmode" goto ConfirmDev
 goto :extra
 
-:sfc_scan
+:AutoKeyboard
+:AutoKeyboard
 cls
-echo Comprobando y reparando archivos del sistema...
-sfc /scannow
-pause
-goto menu
 
-:disablenotis
+:: Muestra el titulo
+echo ==================================================
+echo                Auto Keyboard
+echo ==================================================
+echo.
+:: Insercion de opciones
+echo 1. Ejecutar Auto-Keyboard
+echo 2. Regresar al menu
+echo.
+
+:: Comando para insercion de opciones
+set /p option=Opcion: 
+
+if "%option%"=="1" (
+    echo Iniciando cliente...
+	timeout /t 2 /nobreak >nul
+    start "" "%~dp0Assets\utilities\auto-teclado\AutoKeyboard.exe"
+	goto :Start
+) else if "%option%"=="2" (
+    goto Start
+) else (
+    echo Opcion no valida. Intente nuevamente.
+    goto AutoKeyboard
+)
+
+goto Start
+
+:DisableNotifications
+:DisableNotifications
 cls
 echo Desactivando las notificaciones de Windows...
 powershell -Command "Set-ItemProperty -Path 'HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\PushNotifications' -Name 'ToastEnabled' -Value 0"
 echo Notificaciones desactivadas.
 pause
-goto menu
+goto Start
 
-:confirm_extremeopti
+:ConfirmXtremeOpti
+:ConfirmXtremeOpti
 cls
 set /p option="Sure (Y/N)? "
 
-if /I "%option%"=="Y" goto confirm_extremeopti2
-if /I "%option%"=="y" goto confirm_extremeopti2
-if /I "%option%"=="yes" goto confirm_extremeopti2
-if /I "%option%"=="YES" goto confirm_extremeopti2
-if /I "%option%"=="N" goto extreme
-if /I "%option%"=="n" goto extreme
-if /I "%option%"=="no" goto extreme
-if /I "%option%"=="NO" goto extreme
+if /I "%option%"=="Y" goto ConfirmXtremeOpti2
+if /I "%option%"=="YES" goto ConfirmXtremeOpti2
+if /I "%option%"=="N" goto Xtreme
+if /I "%option%"=="NO" goto Xtreme
 
 echo Invalid option. Exiting.
-goto extreme
+goto Xtreme
 
-:confirm_lite
+:ConfirmLite
+:ConfirmLite
 cls
 set /p option="Sure (Y/N)? "
 
-if /I "%option%"=="Y" goto lite
-if /I "%option%"=="y" goto lite
-if /I "%option%"=="yes" goto lite
-if /I "%option%"=="YES" goto lite
-if /I "%option%"=="N" goto extreme
-if /I "%option%"=="no" goto extreme
-if /I "%option%"=="n" goto extreme
-if /I "%option%"=="NO" goto extreme
+if /I "%option%"=="Y" goto Lite
+if /I "%option%"=="YES" goto Lite
+if /I "%option%"=="N" goto Xtreme
+if /I "%option%"=="NO" goto Xtreme
 
 echo Invalid option. Exiting.
-goto extreme
+goto Xtreme
 
-:confirm_develop
+:ConfirmDev
+:ConfirmDev
 cls
 set /p option="Sure (Y/N)? "
 
-if /I "%option%"=="Y" goto develop
-if /I "%option%"=="y" goto develop
-if /I "%option%"=="yes" goto develop
-if /I "%option%"=="YES" goto develop
-if /I "%option%"=="N" goto start
-if /I "%option%"=="n" goto start
-if /I "%option%"=="no" goto start
-if /I "%option%"=="NO" goto start
+if /I "%option%"=="Y" goto DevOpt
+if /I "%option%"=="YES" goto DevOpt
+if /I "%option%"=="N" goto Start
+if /I "%option%"=="NO" goto Start
+goto :Start
 
-:develop
+
+
+:DevOpt
+:DevOpt
 cls
 echo Develop Mode : OptiTool
 echo.
@@ -858,39 +1379,42 @@ echo *10 - Exit of Develop Mode
 
 set /p option="Enter option: "
 
-if /I "%option%"=="1" goto direct_goto
+if /I "%option%"=="1" goto DGoto
 if /I "%option%"=="2" start notepad "%~dp0Updater.bat"
-if /I "%option%"=="3" goto dev_help
+if /I "%option%"=="3" goto DevHelp
 if /I "%option%"=="4" start notepad "%~dp0OptiTool.bat"
 if /I "%option%"=="5" goto GenerateReport
 if /I "%option%"=="6" goto RunTests
 if /I "%option%"=="7" goto BackupProject
 if /I "%option%"=="8" goto EnvironmentVariables
-if /I "%option%"=="9" goto sysinfo_av
-if /I "%option%"=="10" goto extra
+if /I "%option%"=="9" goto AVSysinfo
+if /I "%option%"=="10" goto Extra
 (
     echo That option is not valid! Select a option from the menu
     timeout /t 2 /nobreak > nul
-    goto :develop
+    goto :DevOpt
 ) else (
-    goto :develop
+    goto :DevOpt
 )
 
 
-:dev_help
+:DevHelp
+:DevHelp
 echo Not available
 pause >nul
 goto exit1
 
-:direct_goto
+:: Redirecciona al goto que escribas
+:DGoto
+:DGoto
 cls
 echo Direct Goto
-echo Type "exit" to exit
+echo Type "esc" to exit
 echo.
 set /p option="Enter goto: "
 
 :: Verificar si el usuario ha ingresado "exit" para salir
-if /I "%option%"=="exit" goto develop
+if /I "%option%"=="esc" goto DevOpt
 
 :: Validar si la etiqueta existe
 goto %option% 2>nul
@@ -903,7 +1427,8 @@ if errorlevel 1 (
 :: Si la etiqueta existe, se ejecuta el goto
 
 :: Muestra la informacion horriblemente detallada del sistema
-:sysinfo_av
+:AVSysinfo
+:AVSysinfo
 cls
 echo Mostrando informacion detallada del sistema...
 echo.
@@ -979,8 +1504,9 @@ set
 echo.
 
 pause
-goto :develop
+goto :DevOpt
 
+:GenerateReport
 :GenerateReport
 cls
 echo Generando informe...
@@ -999,8 +1525,9 @@ echo Total de archivos: %errorlevel% >> "%reportFile%"
 
 echo Informe guardado en %reportFile%.
 pause
-goto :develop
+goto :DevOpt
 
+:RunTests
 :RunTests
 cls
 echo Ejecutando pruebas...
@@ -1084,9 +1611,10 @@ echo Pruebas fallidas: %failed% >> "%testResults%"
 
 echo Resultados guardados en %testResults%.
 pause
-goto :develop
+goto :DevOpt
 
 
+:BackupProject
 :BackupProject
 cls
 echo Realizando copia de seguridad del proyecto...
@@ -1109,8 +1637,12 @@ if %errorlevel% equ 0 (
 )
 
 pause
-goto :develop
+goto :DevOpt
 
+:: Tengo planes de pasar OptiTool a un proyecto oficial, en vez de ser simplemente un proyecto de prueba, esto lo pensare despues de
+:: la 4.5.
+
+:EnviromentVariables
 :EnvironmentVariables
 cls
 echo Configurando Variables de Entorno...
@@ -1128,47 +1660,29 @@ echo Variables de entorno actuales:
 set
 
 pause
-goto :develop
+goto :DevOpt
 
-:updateclient
+:: Abre el cliente de actualizacion
+
+:UpdOptiTool
+:UpdOptiTool
 cls
-echo ==================================================
-echo              Actualizar OptiTool
-echo ==================================================
-echo.
 echo Iniciando cliente...
 timeout /t 1 /nobreak >nul
 
-start "" "%~dp0Updater.bat"
+start "" "%~dp0Assets\update.bat"
 
 timeout /t 2 /nobreak >nul
-goto start
+goto Start
 
-:lite_cus
+:: Esta version de :lite, directamente quita el pause, haciendo que la optimizacion sea continua
+:LiteCustom
+:LiteCustom
 cls
-echo ==================================================
-echo                Litear Windows
-echo ==================================================
-echo.
-echo  Esta seccion  borrara componentes del sistema
-echo  para reducir el espacio y optimizar el HDD/SSD.
-echo.
-echo  En pocas palabras, tu sistema operativo se volvera
-echo  ULTRA lite, lo que puede generar fallos
-echo.  
-echo    ! ! ! ESTO PUEDE ROMPER TU WINDOWS! ! !
-echo.
-echo !!! NO ME HAGO RESPONSABLE DE LO QUE PASE CON TU
-echo            COMPUTADORA/LAPTOP ! ! !
-echo.
-echo ==================================================
-echo.
-timeout /t 2
-cls
-regedit /S "Apariencia\Deshabilitar Animaciones.reg"
-regedit /S "Apariencia\Deshabilitar Cortana.reg"
-regedit /S "Apariencia\Deshabilitar Transparencias.reg"
-regedit /S "Apariencia\Deshabilitar Centro Acciones.reg"
+regedit /S "Appearance\Deshabilitar Animaciones.reg"
+regedit /S "Appearance\Deshabilitar Cortana.reg"
+regedit /S "Appearance\Deshabilitar Transparencias.reg"
+regedit /S "Appearance\Deshabilitar Centro Acciones.reg"
 echo.
 echo Consiguiendo acceso a WinSxS...
 echo.
@@ -1206,13 +1720,15 @@ echo Borrando Apps UWP...
 echo.
 powershell Get-AppxPackage -AllUsers | Where-Object { $_.Name -notlike "*store*" } | Remove-AppxPackage
 
-start "" "%~dp0Assets\batchutilities\screen.bat"
+start "" "%~dp0Assets\utilities\screen.bat"
 
-start "" "%~dp0Assets\batchutilities\FastTempDel.bat"
+start "" "%~dp0Assets\utilities\FastTempDel.bat"
 
-goto :donelite
+goto :DoneXtreme
 
-:lite
+:: Recorta el sistema, con lo cual el C:\Windows puede corromperse
+:Lite
+:Lite
 cls
 echo ==================================================
 echo                Litear Windows
@@ -1234,10 +1750,10 @@ echo.
 timeout /t 5
 pause
 cls
-regedit /S "Apariencia\Deshabilitar Animaciones.reg"
-regedit /S "Apariencia\Deshabilitar Cortana.reg"
-regedit /S "Apariencia\Deshabilitar Transparencias.reg"
-regedit /S "Apariencia\Deshabilitar Centro Acciones.reg"
+regedit /S "Appearance\Deshabilitar Animaciones.reg"
+regedit /S "Appearance\Deshabilitar Cortana.reg"
+regedit /S "Appearance\Deshabilitar Transparencias.reg"
+regedit /S "Appearance\Deshabilitar Centro Acciones.reg"
 echo.
 echo Consiguiendo acceso a WinSxS...
 echo.
@@ -1275,32 +1791,35 @@ echo Borrando Apps UWP...
 echo.
 powershell Get-AppxPackage -AllUsers | Where-Object { $_.Name -notlike "*store*" } | Remove-AppxPackage
 
-start "" "%~dp0Assets\batchutilities\screen.bat"
+start "" "%~dp0Assets\utilities\screen.bat"
 
-start "" "%~dp0Assets\batchutilities\FastTempDel.bat"
+start "" "%~dp0Assets\utilities\FastTempDel.bat"
 
-goto :donelite
+goto :DoneLite
 
 
-:credits
+:Creds
+:Creds
 cls
 echo Iniciando herramienta de creditos...
 echo.
-start "" "%~dp0Assets\batchutilities\creds.bat"
+start "" "%~dp0Assets\utilities\creds.bat"
 
 timeout /t 2 /nobreak >nul
-goto exit1
+goto :Start
 
-:sysinf
+:Sysinfo
+:Sysinfo
 cls
 echo Iniciando SystemInfo...
 echo.
-start "" "%~dp0Assets\batchutilities\sysinfo.bat"
+start "" "%~dp0Assets\utilities\sysinfo.bat"
 
 timeout /t 2 /nobreak >nul
-goto exit1
+goto :Start
 
-:done
+:Done
+:Done
 cls
 echo ==================================================
 echo        Optimizacion realizada con exito
@@ -1315,9 +1834,10 @@ echo %OPTI_TEXT%
 echo.
 echo ==================================================
 timeout /t 10 /nobreak
-goto :start
+goto :Start
 
-:doneram
+:DoneRAM
+:DoneRAM
 cls
 echo ==================================================
 echo      Optimizacion de RAM realizada con exito
@@ -1333,9 +1853,10 @@ echo %OPTI_TEXT%
 echo.
 echo ==================================================
 timeout /t 10 /nobreak
-goto :start
+goto :Start
 
-:done_extreme
+:DoneXtreme
+:DoneXtreme
 cls
 echo ==================================================
 echo          Sistema comprimido al tope
@@ -1353,11 +1874,32 @@ echo.
 echo         %OPTI_TEXT%
 echo.
 echo ==================================================
-start "" "%~dp0Assets\messages\message_lite.vbs"
-goto exit1
+start "" "%~dp0Assets\msg\message_lite.vbs"
+goto Ext1
 
+:DoneSFC
+:DoneSFC
+cls
+echo ==================================================
+echo         Archivos reparados con exito
+echo ==================================================
+echo.
+echo Todos los archivos dañados del sistema han sido
+echo reparados!
+echo.
+echo Para aplicar las reparaciones recomendamos que
+echo cierres todas tus aplicaciones abiertas y reinicies
+echo el PC
+echo.
+echo By OptiStudio
+echo.
+echo ==================================================
+timeout /t 2 /nobreak >nul
+pause
+goto Ext1
 
-:donelite
+:DoneLite
+:DoneLite
 cls
 echo ==================================================
 echo      Sistema comprimido y liteado con exito
@@ -1374,10 +1916,11 @@ echo By OptiStudio
 echo.
 echo ==================================================
 pause
-start "" "%~dp0Assets\messages\message_lite.vbs"
-goto exit1
+start "" "%~dp0Assets\msg\message_lite.vbs"
+goto Ext1
 
-:done_defrag
+:DefragDone
+:DefragDone
 cls
 echo ==================================================
 echo      Desfragmentacion realizada con exito
@@ -1392,27 +1935,55 @@ echo By OptiStudio
 echo.
 echo ==================================================
 pause
-goto exit1
+goto Ext1
 
-:exit1
+:DoneRegDel
+:DoneRegDel
+cls
+echo ==================================================
+echo    Limpieza del registro completada con exito
+echo ==================================================
+echo.
+echo Tu registro de Windows fue completamente limpiado.
+echo Reinicia tu computadora para aplicar los cambios!
+echo.
+echo ! ! !  CUALQUIER FALLO NO ME HAGO RESPONSABLE ! ! !
+echo.
+echo By OptiStudio
+echo.
+echo ==================================================
+pause
+start "" "%~dp0Assets\msg\message_lite.vbs"
+goto Ext1
+
+:Ext1
+:Ext1
 cls
 echo Saliendo del script...
-timeout /t 5 /nobreak >nul
+timeout /t 1 /nobreak >nul
+echo 3...
+timeout /t 1 /nobreak >nul
+echo 2...
+timeout /t 1 /nobreak >nul
+echo 1.
+timeout /t 1 /nobreak >nul
 exit
 
-:exit2
+:Ext2
+:Ext2
 cls
 echo Presione espacio para salir del script...
 pause >nul
 exit
 
-:: Este modo de salida es cuando presionas el boton de cerrar (X) esto se terminara de agregar en la 4.1
-:exit3 
+:: Este modo de salida es cuando presionas el boton de cerrar (X) esto se terminara de agregar en la 5.0
+:Ext3
+:Ext3
 cls
-echo Seguro que deseas salir? Puede presentar errores futuros en el script
+echo Seguro que deseas salir? Puede presentar errores futuros en el script y/o en tu computadora.
 pause
 exit
 
 
-:: Este programa es de uso abierto y puede ser modificado por todos. Solo no olvides darle
-:: Creditos a su creador OptiStudio.
+:: Este programa es de uso abierto y puede ser modificado por todos. Solo no olvides darle creditos a su creador, OptiStudio.
+:: Updated via GitHub
