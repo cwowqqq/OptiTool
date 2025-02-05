@@ -3,7 +3,6 @@
 **Project OptiTool** is a tool designed to optimize your system, with additional features such as displaying system information and uninstalling applications. This project is aimed at improving your computer's performance through cleaning and managing applications, processes, and settings.
 
 [![MIT License](https://badgen.net/github/LICENSE/OptiStudioXD/OptiTool)](https://opensource.org/licenses/MIT)
-![Notepad++](https://img.shields.io/badge/Notepad++-222222?style=for-the-badge&logo=Notepad%2B%2B&logoColor=90E59A)
 
 
 ## 📥 Downloads
@@ -54,3 +53,5 @@ This idea came from a tool called [OptiJuegos](https://optijuegos.github.io) cal
 But I will never forget the origin of this idea, thanks to [OptiJuegos](https://optijuegos.github.io)!
 
 [![Windows](https://custom-icon-badges.demolab.com/badge/Windows-0078D6?logo=windows11&logoColor=white)](#) [![Linux](https://img.shields.io/badge/Linux-FCC624?logo=linux&logoColor=black)](#)
+
+[![Notepad++](https://img.shields.io/badge/Notepad++-90E59A.svg?&logo=notepad%2b%2b&logoColor=black)](#)
