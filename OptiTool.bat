@@ -3,7 +3,7 @@
 :: Coloca el color
 color 0A
 
-:: A.2 Updated via GitHub
+:: 4.0 Rev A.3 Updated via GitHub
 
 ::Coloca los entornos en el batch
 set OPTI_VER=OptiTool v4.0
@@ -151,8 +151,6 @@ echo ==================================================
 echo             Menu de optimizaciones
 echo ==================================================
 echo.
-
-
 
 :: Insercion de opciones
 echo *1 - Optimizar PC 
