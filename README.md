@@ -8,7 +8,7 @@
 ## 📥 Downloads
 
 - [**Download Project OptiTool (zip)**](https://github.com/OptiStudioXD/OptiTool/releases/download/4.0/OptiTool_v4.0.ES.zip)
-- [**Download Project OptiTool Setup Installer (Outdated)**]
+- **Download Project OptiTool Setup Installer (Outdated)**
 - [**Linux Editions**](https://goo.su/YCrUsg)
 
 ## 🛠️ Installation
