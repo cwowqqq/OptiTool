@@ -3,7 +3,7 @@
 :: Coloca el color
 color 0A
 
-:: 4.0 Rev A.3 Updated via GitHub
+:: 4.0.1 Rev B Updated via GitHub
 
 ::Coloca los entornos en el batch
 set OPTI_VER=OptiTool v4.0
@@ -11,17 +11,17 @@ set OPTI_TEXT=OptiTool - Script de optimizacion
 set WGET="%~dp0Assets\wget.exe"
 set FFPLAY="%~dp0Assets\ffplay.exe"
 
-:: Bases del codigo para solicitar admin por OptiJuegos
+:: Espero que OptiJuegos no se enoje por esto (el codigo para solicitar admin, todo lo demas fue hecho por mi y por ayuda de BlackBoxAI o ChatGPT)
 
 :: Solicita permisos de administrador
-REM Verificar si el script tiene permisos de administrador
-IF "%PROCESSOR_ARCHITECTURE%" EQU "amd64" (
-    >nul 2>&1 "%SYSTEMROOT%\SysWOW64\cacls.exe" "%SYSTEMROOT%\SysWOW64\config\system"
+REM  --> Verificar si el script tiene permisos
+    IF "%PROCESSOR_ARCHITECTURE%" EQU "amd64" (
+>nul 2>&1 "%SYSTEMROOT%\SysWOW64\cacls.exe" "%SYSTEMROOT%\SysWOW64\config\system"
 ) ELSE (
-    >nul 2>&1 "%SYSTEMROOT%\system32\cacls.exe" "%SYSTEMROOT%\system32\config\system"
+>nul 2>&1 "%SYSTEMROOT%\system32\cacls.exe" "%SYSTEMROOT%\system32\config\system"
 )
 
-REM Si no tenemos permisos de administrador, solicitar permisos
+REM --> Si se establece la bandera de error, no tenemos permisos de administrador.
 if '%errorlevel%' NEQ '0' (
     goto UACP
 ) else (
@@ -29,31 +29,28 @@ if '%errorlevel%' NEQ '0' (
 )
 
 :UACP
-    echo Solicitud de permisos de administrador...
     echo Set UAC = CreateObject^("Shell.Application"^) > "%temp%\getadmin.vbs"
-    set params=%*
+    set params= %*
     echo UAC.ShellExecute "cmd.exe", "/c ""%~s0"" %params:"=""%", "", "runas", 1 >> "%temp%\getadmin.vbs"
 
-    REM Ejecutar el script como administrador
     "%temp%\getadmin.vbs"
     del "%temp%\getadmin.vbs"
     exit /B
 
 :AdminEnable
-    REM Establecer el directorio de trabajo correcto
     pushd "%CD%"
     CD /D "%~dp0"
-    
-    REM Colocar la versión como título
-    title %OPTI_VER%
-
+	
+:: Coloca la version como titulo
+title %OPTI_VER%
+	
+:: Verifica si existe el archivo de options, si existe, vamonos a :start, si no existe muestra el tutorial
 :Verification
 :Verification
-:: Verificar existencia de archivo de opciones
 if exist "%CD%\Assets\verif\options.txt" (
-goto :Start
+    goto :Start
 ) else (
-goto :Tutorial
+    goto :Tutorial
 )
 
 	
@@ -151,6 +148,8 @@ echo ==================================================
 echo             Menu de optimizaciones
 echo ==================================================
 echo.
+
+
 
 :: Insercion de opciones
 echo *1 - Optimizar PC 
@@ -1380,7 +1379,7 @@ echo *10 - Exit of Develop Mode
 set /p option="Enter option: "
 
 if /I "%option%"=="1" goto DGoto
-if /I "%option%"=="2" start notepad "%~dp0Updater.bat"
+if /I "%option%"=="2" start notepad "%~dp0update.bat"
 if /I "%option%"=="3" goto DevHelp
 if /I "%option%"=="4" start notepad "%~dp0OptiTool.bat"
 if /I "%option%"=="5" goto GenerateReport
@@ -1670,7 +1669,7 @@ cls
 echo Iniciando cliente...
 timeout /t 1 /nobreak >nul
 
-start "" "%~dp0Assets\update.bat"
+start "" "%~dp0update.bat"
 
 timeout /t 2 /nobreak >nul
 goto Start
@@ -1986,4 +1985,3 @@ exit
 
 
 :: Este programa es de uso abierto y puede ser modificado por todos. Solo no olvides darle creditos a su creador, OptiStudio.
-:: Updated via GitHub
