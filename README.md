@@ -1,7 +1,7 @@
 [![Typing SVG](https://readme-typing-svg.herokuapp.com?font=Kanit&weight=800&size=50&pause=1000&color=188EF7&vCenter=true&width=435&lines=Project%3A+OptiTool)](https://git.io/typing-svg)
 
 [![Version](https://img.shields.io/github/v/release/OptiStudioXD/OptiTool?color=%230567ff&label=Latest%20Release&style=for-the-badge)](https://github.com/OptiStudioXD/OptiTool/releases/latest)
-![GitHub Downloads (specific asset, all releases)](https://img.shields.io/github/downloads/OptiStudioXD/OptiTool/OptiTool.v4.0.1_ES.zip?label=Total%20Downloads&style=for-the-badge)
+![GitHub Downloads (specific asset, all releases)](https://img.shields.io/github/downloads/OptiStudioXD/OptiTool/OptiTool_v4.1.ES.zip?label=Total%20Downloads&style=for-the-badge)
 
 **Project OptiTool** is a tool designed to optimize your system, with additional features such as displaying system information and uninstalling applications. This project is aimed at improving your computer's performance through cleaning and managing applications, processes, and settings.
 
@@ -10,7 +10,7 @@
 
 ## 📥 Downloads
 
-- [**Download Project OptiTool (zip)**](https://github.com/OptiStudioXD/OptiTool/releases/download/4.0/OptiTool_v4.0.ES.zip)
+- [**Download Project OptiTool (zip)**](https://github.com/OptiStudioXD/OptiTool/releases/download/4.1/OptiTool_v4.1.ES.zip)
 - **Download Project OptiTool Setup Installer (Outdated)**
 - [**Linux Editions**](https://goo.su/YCrUsg)
 
@@ -58,3 +58,5 @@ But I will never forget the origin of this idea, thanks to [OptiJuegos](https://
 [![Windows](https://custom-icon-badges.demolab.com/badge/Windows-0078D6?logo=windows11&logoColor=white)](#) [![Linux](https://img.shields.io/badge/Linux-FCC624?logo=linux&logoColor=black)](#)
 
 [![Notepad++](https://img.shields.io/badge/Notepad++-90E59A.svg?&logo=notepad%2b%2b&logoColor=black)](#)
+
+actual version is 4.1 lol
