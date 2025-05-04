@@ -3,6 +3,8 @@
 [![Version](https://img.shields.io/github/v/release/OptiStudioXD/OptiTool?color=%230567ff&label=Latest%20Release&style=for-the-badge)](https://github.com/OptiStudioXD/OptiTool/releases/latest)
 ![GitHub Downloads (specific asset, all releases)](https://img.shields.io/github/downloads/OptiStudioXD/OptiTool/OptiTool_v4.1.ES.zip?label=Total%20Downloads&style=for-the-badge)
 
+**Currently,** developing an experimental version
+
 **Project OptiTool** is a tool designed to optimize your system, with additional features such as displaying system information and uninstalling applications. This project is aimed at improving your computer's performance through cleaning and managing applications, processes, and settings.
 
 [![MIT License](https://badgen.net/github/LICENSE/OptiStudioXD/OptiTool)](https://opensource.org/licenses/MIT)
