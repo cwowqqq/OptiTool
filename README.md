@@ -23,7 +23,7 @@
 1. Download the file using the provided link.
 2. Extract the contents to a folder of your choice.
 3. Go to the **OptiTool** folder.
-4. Run `OptiTool.bat`.
+4. Run `Launcher.cmd`.
 5. Enjoy the tool!
 
 ### Installation via Setup
@@ -33,7 +33,7 @@
 3. Optionally, you can create a shortcut on the desktop.
 4. Complete the installation.
 5. Go to the installation folder.
-6. Run `OptiTool.bat`.
+6. Run `Launcher.cmd`.
 7. Ready to use!
 
 ## 📧 Mail
@@ -44,7 +44,7 @@ The new OptiStudio electronic mail is:
 
 ## 🛠️ Usage
 
-The tool has a simple interface, as it is made in `batchfile`. Each button has its respective function, and the script includes guides to help you use it without difficulty.
+The tool has a simple interface, as it is made in `.cmd`. Each button has its respective function, and the script includes guides to help you use it without difficulty.
 
 The features of **OptiTool** include:
 - System optimization.
