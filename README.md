@@ -1,7 +1,7 @@
 [![Typing SVG](https://readme-typing-svg.herokuapp.com?font=Kanit&weight=800&size=50&pause=1000&color=188EF7&vCenter=true&width=435&lines=Project%3A+OptiTool)](https://git.io/typing-svg)
 
 [![Version](https://img.shields.io/github/v/release/OptiStudioXD/OptiTool?color=%230567ff&label=Latest%20Release&style=for-the-badge)](https://github.com/OptiStudioXD/OptiTool/releases/latest)
-![GitHub Downloads (specific asset, all releases)](https://img.shields.io/github/downloads/OptiStudioXD/OptiTool/OptiTool_v4.1.ES.zip?label=Total%20Downloads&style=for-the-badge)
+![GitHub Downloads (specific asset, all releases)](https://img.shields.io/github/downloads/OptiStudioXD/OptiTool/OptiTool_v4.1.Es.zip?label=Total%20Downloads&style=for-the-badge)
 
 **Currently,** developing an experimental version
 
