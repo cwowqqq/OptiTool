@@ -5,10 +5,8 @@
 
 > [!NOTE]
 > Dear users,
-At this point, very few people have tried the project, decreasing the team's motivation
-Because of this, the creator decided to take a break from development, I hope you understand this.
-Sincerely, OptiStudio, OptiTool Team and azxc15
-
+OptiTool migrated to OptiTweaks
+and for, OptiStudio is now cwowqqq, thanks to all
 
 **Project OptiTool** is a tool designed to optimize your system, with additional features such as displaying system information and uninstalling applications. This project is aimed at improving your computer's performance through cleaning and managing applications, processes, and settings.
 
